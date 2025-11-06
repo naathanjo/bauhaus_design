@@ -129,13 +129,12 @@ export default async function (eleventyConfig) {
   });
 
   // Custom filter for GitHub Pages path prefix
+  // Note: Eleventy's pathPrefix handles this automatically, so this filter just returns the URL
   eleventyConfig.addFilter('baseUrl', function (url) {
-    // For GitHub Pages: /bauhaus_design
-    const pathPrefix = process.env.PATH_PREFIX || '/bauhaus_design';
-    if (!url) return pathPrefix;
-    // Ensure url starts with /
-    const cleanUrl = url.startsWith('/') ? url : `/${url}`;
-    return pathPrefix ? `${pathPrefix}${cleanUrl}` : cleanUrl;
+    // Eleventy's pathPrefix in config handles the prefixing automatically
+    // This filter just ensures the URL is clean
+    if (!url) return '/';
+    return url;
   });
 
   // Reading time estimate
