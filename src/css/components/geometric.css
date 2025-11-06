@@ -1,0 +1,305 @@
+/* ========================================
+   GEOMETRIC COMPONENTS
+   Bauhaus-inspired shapes and elements
+   ======================================== */
+
+/* Geometric container */
+.geometric-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background geometric elements */
+.geometric-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-negative);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Circle */
+.geometric-circle,
+.circle {
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+/* Square */
+.geometric-square,
+.square {
+  aspect-ratio: 1;
+}
+
+/* Rectangle with golden ratio */
+.geometric-rectangle,
+.rectangle {
+  aspect-ratio: var(--ratio-golden);
+}
+
+/* Triangle */
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.triangle-up {
+  border-width: 0 50px 86.6px 50px;
+  border-color: transparent transparent var(--color-primary) transparent;
+}
+
+.triangle-down {
+  border-width: 86.6px 50px 0 50px;
+  border-color: var(--color-primary) transparent transparent transparent;
+}
+
+.triangle-right {
+  border-width: 50px 0 50px 86.6px;
+  border-color: transparent transparent transparent var(--color-primary);
+}
+
+.triangle-left {
+  border-width: 50px 86.6px 50px 0;
+  border-color: transparent var(--color-primary) transparent transparent;
+}
+
+/* Floating background elements */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.bg-circle--red {
+  background-color: var(--color-bauhaus-red);
+  width: 350px;
+  height: 350px;
+  top: -20%;          /* Even more off-screen */
+  right: -10%;        /* Further away */
+  opacity: 0.03;      /* WHISPER: Almost invisible */
+  animation: float 20s ease-in-out infinite;
+}
+
+.bg-square {
+  position: absolute;
+  opacity: 0.08;
+}
+
+.bg-square--blue {
+  background-color: var(--color-bauhaus-blue);
+  width: 250px;
+  height: 250px;
+  bottom: 10%;
+  left: -10%;         /* Even further off-screen */
+  opacity: 0.03;      /* WHISPER: Almost invisible */
+  animation: rotate 30s linear infinite;
+}
+
+.bg-triangle {
+  position: absolute;
+  opacity: 0.06;
+}
+
+.bg-triangle--yellow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 125px 216.5px 125px;
+  border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
+  top: 40%;
+  left: 1%;           /* Barely on screen */
+  opacity: 0.02;      /* GHOST: Nearly invisible */
+  animation: pulse 15s ease-in-out infinite;
+}
+
+/* Geometric frames for images */
+.geometric-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.geometric-frame::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--color-primary);
+  z-index: 1;
+}
+
+.geometric-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-accent);
+  z-index: 1;
+}
+
+/* Geometric overlays */
+.geometric-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlay-element {
+  position: absolute;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+}
+
+.overlay-element--red {
+  background-color: var(--color-bauhaus-red);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 20px;
+  right: 20px;
+}
+
+.overlay-element--blue {
+  background-color: var(--color-bauhaus-blue);
+  width: 80px;
+  height: 80px;
+  bottom: 40px;
+  left: 40px;
+  transform: rotate(45deg);
+}
+
+.overlay-element--yellow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 69.28px 40px;
+  border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
+  bottom: 20px;
+  right: 60px;
+}
+
+/* Geometric dividers */
+.geometric-divider {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-red) 33%,
+    var(--color-bauhaus-blue) 33%,
+    var(--color-bauhaus-blue) 66%,
+    var(--color-bauhaus-yellow) 66%,
+    var(--color-bauhaus-yellow) 100%
+  );
+  margin: var(--spacing-2xl) 0;
+}
+
+/* Footer divider is even bolder */
+.site-footer .geometric-divider {
+  height: 12px;
+}
+
+/* Geometric grid pattern */
+.geometric-grid {
+  background-image: linear-gradient(
+      var(--color-border) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+}
+
+/* Interactive geometric elements */
+.geometric-interactive {
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--transition-bauhaus);
+}
+
+.geometric-interactive:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.06;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.1;
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg-circle--red,
+  .bg-square--blue,
+  .bg-triangle--yellow,
+  .geometric-interactive {
+    animation: none;
+  }
+
+  .geometric-interactive:hover {
+    transform: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bg-circle--red {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bg-square--blue {
+    width: 150px;
+    height: 150px;
+  }
+
+  .geometric-frame::before,
+  .geometric-frame::after {
+    display: none;
+  }
+}

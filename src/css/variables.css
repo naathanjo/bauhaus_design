@@ -1,0 +1,279 @@
+/* ========================================
+   BAUHAUS REVIVAL - CSS CUSTOM PROPERTIES
+   Design Token System
+   ======================================== */
+
+:root {
+  /* ========================================
+     BAUHAUS COLOR PALETTE
+     ======================================== */
+  
+  /* Primary Bauhaus Colors */
+  --color-bauhaus-red: #e31e24;
+  --color-bauhaus-blue: #004f9f;
+  --color-bauhaus-yellow: #ffd100;
+  --color-bauhaus-black: #000000;
+  --color-bauhaus-white: #ffffff;
+  
+  /* Neo-Modernist Neutrals */
+  --color-concrete: #f5f5f5;
+  --color-steel: #8e8e93;
+  --color-charcoal: #2c2c2c;
+  --color-aluminum: #e5e5e5;
+  --color-graphite: #4a4a4a;
+  
+  /* Semantic Color Assignments */
+  --color-primary: var(--color-bauhaus-blue);
+  --color-primary-light: #0066cc;
+  --color-primary-dark: #003d7a;
+  
+  --color-secondary: var(--color-bauhaus-red);
+  --color-secondary-light: #ff3339;
+  --color-secondary-dark: #b31519;
+  
+  --color-accent: var(--color-bauhaus-yellow);
+  --color-accent-light: #ffdc33;
+  --color-accent-dark: #ccaa00;
+  
+  /* Text Colors */
+  --color-text: var(--color-charcoal);
+  --color-text-light: var(--color-steel);
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: var(--color-bauhaus-white);
+  
+  /* Background Colors */
+  --color-bg: var(--color-bauhaus-white);
+  --color-bg-alt: var(--color-concrete);
+  --color-bg-dark: var(--color-charcoal);
+  --color-bg-geometric: var(--color-aluminum);
+  
+  /* Border Colors */
+  --color-border: var(--color-aluminum);
+  --color-border-light: var(--color-concrete);
+  --color-border-dark: var(--color-charcoal);
+  
+  /* State Colors */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: var(--color-bauhaus-red);
+  --color-info: var(--color-bauhaus-blue);
+
+  /* ========================================
+     TYPOGRAPHY SYSTEM
+     ======================================== */
+  
+  /* Font Families */
+  --font-display: 'Inter', 'Futura', 'Avenir Next', 'Helvetica Neue', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Monaco', 'Courier New', monospace;
+  
+  /* Font Sizes - Modular Scale (1.25 - Major Third) */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 2rem;        /* 32px */
+  --font-size-4xl: 2.5rem;      /* 40px */
+  --font-size-5xl: 3.5rem;      /* 56px */
+  --font-size-6xl: 4.5rem;      /* 72px */
+  --font-size-7xl: 6rem;        /* 96px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.35;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+
+  /* ========================================
+     SPACING SYSTEM
+     ======================================== */
+  
+  /* Golden Ratio: 1.618 */
+  --ratio-golden: 1.618;
+  
+  /* Base Spacing Unit */
+  --spacing-base: 1rem;        /* 16px */
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;       /* 4px */
+  --spacing-sm: 0.5rem;        /* 8px */
+  --spacing-md: 1rem;          /* 16px */
+  --spacing-lg: 1.5rem;        /* 24px */
+  --spacing-xl: 2rem;          /* 32px */
+  --spacing-2xl: 3rem;         /* 48px */
+  --spacing-3xl: 4rem;         /* 64px */
+  --spacing-4xl: 6rem;         /* 96px */
+  --spacing-5xl: 8rem;         /* 128px */
+  
+  /* Golden Ratio Spacing */
+  --spacing-golden-sm: calc(var(--spacing-base) / var(--ratio-golden)); /* ~10px */
+  --spacing-golden-lg: calc(var(--spacing-base) * var(--ratio-golden)); /* ~26px */
+
+  /* ========================================
+     LAYOUT SYSTEM
+     ======================================== */
+  
+  /* Container */
+  --container-max-width: 1400px;          /* Increased for better space utilization */
+  --container-max-width-narrow: 900px;    /* For hero/single column content */
+  --container-max-width-content: 1200px;  /* For reading content */
+  --container-padding: var(--spacing-md);
+  
+  /* Grid */
+  --grid-columns: 12;
+  --grid-gap: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) for tighter card layouts */
+  
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ========================================
+     GEOMETRIC DESIGN ELEMENTS
+     ======================================== */
+  
+  /* Border Radius - BAUHAUS: Sharp geometric edges only */
+  --radius-none: 0;
+  --radius-sm: 0;              /* Bauhaus: No rounding */
+  --radius-base: 0;            /* Bauhaus: No rounding */
+  --radius-md: 0;              /* Bauhaus: No rounding */
+  --radius-lg: 0;              /* Bauhaus: No rounding */
+  --radius-xl: 0;              /* Bauhaus: No rounding */
+  --radius-2xl: 0;             /* Bauhaus: No rounding */
+  --radius-full: 50%;          /* Only for perfect circles */
+  
+  /* Aspect Ratios */
+  --ratio-square: 1;
+  --ratio-video: 1.777;        /* 16:9 */
+  --ratio-photo: 1.5;          /* 3:2 */
+  
+  /* Geometric Sizes */
+  --geometric-sm: 40px;
+  --geometric-md: 80px;
+  --geometric-lg: 120px;
+  --geometric-xl: 200px;
+
+  /* ========================================
+     SHADOWS & ELEVATION
+     ======================================== */
+  
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  
+  /* Bauhaus Hard Shadows */
+  --shadow-bauhaus-sm: 4px 4px 0 var(--color-bauhaus-black);
+  --shadow-bauhaus-md: 8px 8px 0 var(--color-bauhaus-black);
+  --shadow-bauhaus-lg: 12px 12px 0 var(--color-bauhaus-black);
+
+  /* ========================================
+     TRANSITIONS & ANIMATIONS
+     ======================================== */
+  
+  /* Timing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bauhaus: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Duration */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  
+  /* Transitions */
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-base: var(--duration-base) var(--ease-in-out);
+  --transition-slow: var(--duration-slow) var(--ease-in-out);
+  --transition-bauhaus: var(--duration-base) var(--ease-bauhaus);
+
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+  
+  --z-negative: -1;
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+  --z-toast: 1700;
+  --z-max: 9999;
+}
+
+/* ========================================
+   DARK THEME OVERRIDES
+   ======================================== */
+
+[data-theme="dark"] {
+  --color-text: var(--color-concrete);
+  --color-text-light: var(--color-aluminum);
+  --color-text-muted: var(--color-steel);
+  
+  --color-bg: #1a1a1a;
+  --color-bg-alt: var(--color-charcoal);
+  --color-bg-dark: var(--color-bauhaus-black);
+  
+  --color-border: var(--color-graphite);
+  --color-border-light: var(--color-charcoal);
+  
+  /* Adjust primary colors for better contrast in dark mode */
+  --color-primary-light: #1a7fd8;
+  --color-accent-light: #ffe14d;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    /* Reduce font sizes on mobile */
+    --font-size-4xl: 2rem;       /* 32px */
+    --font-size-5xl: 2.5rem;     /* 40px */
+    --font-size-6xl: 3rem;       /* 48px */
+    --font-size-7xl: 3.5rem;     /* 56px */
+    
+    /* Reduce spacing on mobile */
+    --spacing-3xl: 3rem;         /* 48px */
+    --spacing-4xl: 4rem;         /* 64px */
+    --spacing-5xl: 5rem;         /* 80px */
+    
+    /* Smaller container padding */
+    --container-padding: var(--spacing-sm);
+    
+    /* Smaller geometric elements */
+    --geometric-md: 60px;
+    --geometric-lg: 100px;
+    --geometric-xl: 150px;
+  }
+}

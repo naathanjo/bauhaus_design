@@ -1,0 +1,37 @@
+{
+  "name": "bauhaus-revival-portfolio",
+  "version": "1.0.0",
+  "description": "A modern portfolio built with Bauhaus Revival / Neo-Modernism design principles using Eleventy",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve --watch --port=8080",
+    "build": "eleventy",
+    "build:production": "NODE_ENV=production eleventy",
+    "serve": "eleventy --serve",
+    "start": "npm run dev",
+    "clean": "rm -rf _site",
+    "docker:dev": "docker compose --profile dev up --build",
+    "docker:prod": "docker compose --profile production up -d --build",
+    "docker:stop": "docker compose --profile dev --profile production down",
+    "docker:clean": "docker compose --profile dev --profile production down -v"
+  },
+  "keywords": [
+    "eleventy",
+    "nunjucks",
+    "portfolio",
+    "bauhaus",
+    "neo-modernism",
+    "static-site",
+    "github-pages"
+  ],
+  "author": "Bauhaus Revival",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .docker-text {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  
+  <!-- Dark Background -->
+  <rect width="400" height="250" fill="#2c2c2c"/>
+  
+  <!-- Container Boxes (representing Docker containers) -->
+  <rect x="50" y="80" width="80" height="80" fill="#004f9f"/>
+  <rect x="160" y="80" width="80" height="80" fill="#e31e24"/>
+  <rect x="270" y="80" width="80" height="80" fill="#ffd100"/>
+  
+  <!-- Connection Lines (orchestration) -->
+  <line x1="90" y1="50" x2="90" y2="80" stroke="#ffffff" stroke-width="3"/>
+  <line x1="200" y1="50" x2="200" y2="80" stroke="#ffffff" stroke-width="3"/>
+  <line x1="310" y1="50" x2="310" y2="80" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Horizontal connector -->
+  <line x1="90" y1="50" x2="310" y2="50" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Central Node -->
+  <circle cx="200" cy="35" r="15" fill="#ffd100"/>
+  
+  <!-- Bottom connections -->
+  <line x1="90" y1="160" x2="90" y2="190" stroke="#ffffff" stroke-width="2"/>
+  <line x1="200" y1="160" x2="200" y2="190" stroke="#ffffff" stroke-width="2"/>
+  <line x1="310" y1="160" x2="310" y2="190" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Small dots at connections -->
+  <circle cx="90" cy="190" r="4" fill="#ffffff"/>
+  <circle cx="200" cy="190" r="4" fill="#ffffff"/>
+  <circle cx="310" cy="190" r="4" fill="#ffffff"/>
+  
+  <!-- Label -->
+  <text x="200" y="225" class="docker-text" font-size="14" text-anchor="middle" fill="#ffffff" opacity="0.7">
+    DOCKER CONTAINERS
+  </text>
+</svg>

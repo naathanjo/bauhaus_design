@@ -1,0 +1,112 @@
+/* ========================================
+   FOOTER COMPONENT
+   Site footer with social links
+   ======================================== */
+
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-xl) 0 var(--spacing-md);  /* Reduced from 3xl/xl (64px/32px) to xl/md (32px/16px) */
+  margin-top: var(--spacing-2xl);  /* Reduced from 5xl (128px) to 2xl (48px) for efficiency */
+  position: relative;
+}
+
+/* Footer divider */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-red) 33%,
+    var(--color-bauhaus-blue) 33%,
+    var(--color-bauhaus-blue) 66%,
+    var(--color-bauhaus-yellow) 66%,
+    var(--color-bauhaus-yellow) 100%
+  );
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) */
+  margin-bottom: var(--spacing-md);  /* Reduced from xl (32px) to md (16px) */
+}
+
+.footer-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-aluminum);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-aluminum);
+  color: var(--color-aluminum);
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-bauhaus-white);
+  transform: translateY(-4px);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  padding-top: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) */
+  border-top: 1px solid var(--color-graphite);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: var(--font-size-sm);
+  color: var(--color-steel);
+  margin: 0;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: var(--spacing-lg) 0 var(--spacing-sm);  /* Reduced from 2xl/lg to lg/sm (24px/8px) */
+    margin-top: var(--spacing-xl);  /* Reduced from 3xl (64px) to xl (32px) */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}

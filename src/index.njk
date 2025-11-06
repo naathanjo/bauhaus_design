@@ -1,0 +1,214 @@
+---
+layout: base.njk
+title: Home
+description: A modern portfolio showcasing projects and writings with Bauhaus design principles
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <!-- Geometric decorative elements -->
+            <div class="geometric-decoration" aria-hidden="true">
+                <div class="shape shape--circle"></div>
+                <div class="shape shape--square"></div>
+                <div class="shape shape--triangle"></div>
+            </div>
+            
+            <h1 class="hero-title">
+                {{ site.title }}
+            </h1>
+            
+            <p class="hero-subtitle">
+                Form follows function. A portfolio where design meets purpose.
+            </p>
+            
+            <div class="hero-cta">
+                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary">
+                    View Projects
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="{{ '/about/' | baseUrl }}" class="btn btn--outline">
+                    About Me
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+                Selected work demonstrating design and development
+            </p>
+        </div>
+        
+        <div class="grid grid--3-col">
+            {% set featuredProjects = collections.projects | filter('featured') | limit(3) %}
+            {% if featuredProjects.length > 0 %}
+                {% for project in featuredProjects %}
+                <article class="card project-card">
+                    {% if project.data.image %}
+                    <div class="card-image">
+                        <img src="{{ project.data.image | baseUrl }}" 
+                             alt="{{ project.data.title }}"
+                             loading="lazy">
+                    </div>
+                    {% endif %}
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <a href="{{ project.url | baseUrl }}">
+                                {{ project.data.title }}
+                            </a>
+                        </h3>
+                        
+                        <p class="card-description">
+                            {{ project.data.description or (project.templateContent | excerpt) }}
+                        </p>
+                        
+                        {% if project.data.tags %}
+                        <div class="card-tags">
+                            {% for tag in project.data.tags %}
+                            {% if tag != "projects" %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        {% if project.data.status %}
+                        <span class="project-status project-status--{{ project.data.status }}">
+                            {{ project.data.status }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a href="{{ project.url | baseUrl }}" class="card-link">
+                            View Project <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <!-- Placeholder when no projects exist yet -->
+                <div class="card project-card">
+                    <div class="card-content">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-description">Featured projects will be showcased here.</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="section-footer">
+            <a href="{{ '/projects/' | baseUrl }}" class="btn btn--secondary">
+                View All Projects
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Blog Posts Section -->
+<section class="recent-posts section section--alt">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Recent Writing</h2>
+            <p class="section-subtitle">
+                Thoughts on design, development, and creativity
+            </p>
+        </div>
+        
+        <div class="grid grid--3-col">
+            {% set recentPosts = collections.blog | reverse | limit(3) %}
+            {% if recentPosts.length > 0 %}
+                {% for post in recentPosts %}
+                <article class="card post-card">
+                    <div class="card-content">
+                        {% if post.data.date %}
+                        <time class="card-date" datetime="{{ post.data.date | dateFormat('YYYY-MM-DD') }}">
+                            {{ post.data.date | dateFormat('MMMM D, YYYY') }}
+                        </time>
+                        {% endif %}
+                        
+                        <h3 class="card-title">
+                            <a href="{{ post.url | baseUrl }}">
+                                {{ post.data.title }}
+                            </a>
+                        </h3>
+                        
+                        <p class="card-description">
+                            {{ post.data.description or (post.templateContent | excerpt) }}
+                        </p>
+                        
+                        {% if post.data.tags %}
+                        <div class="card-tags">
+                            {% for tag in post.data.tags %}
+                            {% if tag != "blog" %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a href="{{ post.url | baseUrl }}" class="card-link">
+                            Read More <span aria-hidden="true">→</span>
+                        </a>
+                        {% if post.templateContent %}
+                        <span class="reading-time">{{ post.templateContent | readingTime }} min read</span>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <!-- Placeholder when no blog posts exist yet -->
+                <div class="card post-card">
+                    <div class="card-content">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-description">Blog posts will appear here soon.</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="section-footer">
+            <a href="{{ '/blog/' | baseUrl }}" class="btn btn--secondary">
+                View All Posts
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta section">
+    <div class="container">
+        <div class="cta-content">
+            <div class="geometric-frame" aria-hidden="true">
+                <div class="frame-corner frame-corner--tl"></div>
+                <div class="frame-corner frame-corner--tr"></div>
+                <div class="frame-corner frame-corner--bl"></div>
+                <div class="frame-corner frame-corner--br"></div>
+            </div>
+            
+            <h2 class="cta-title">Let's Work Together</h2>
+            <p class="cta-text">
+                Interested in collaborating? Get in touch to discuss your next project.
+            </p>
+            
+            <div class="cta-actions">
+                <a href="{{ '/contact/' | baseUrl }}" class="btn btn--accent btn--lg">
+                    Get in Touch
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

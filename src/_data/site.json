@@ -1,0 +1,41 @@
+{
+  "title": "Bauhaus Revival",
+  "description": "A modern portfolio showcasing Bauhaus Revival and Neo-Modernism design principles through contemporary web development",
+  "author": "Design Portfolio",
+  "url": "https://eaikw.com",
+  "email": "hello@eaikw.com",
+  "tagline": "Where Bauhaus Meets Modern Web",
+  "keywords": [
+    "bauhaus",
+    "neo-modernism",
+    "web design",
+    "portfolio",
+    "minimalist design",
+    "geometric design"
+  ],
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername",
+    "dribbble": "https://dribbble.com/yourusername"
+  },
+  "navigation": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Work",
+      "url": "/projects/"
+    },
+    {
+      "text": "Thoughts",
+      "url": "/blog/"
+    },
+    {
+      "text": "About",
+      "url": "/about/"
+    }
+  ],
+  "buildTime": "2025-11-05"
+}

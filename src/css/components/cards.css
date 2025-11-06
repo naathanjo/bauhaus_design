@@ -1,0 +1,265 @@
+/* ========================================
+   CARD COMPONENTS
+   Content containers with Bauhaus styling
+   ======================================== */
+
+/* Base card - BAUHAUS: Sharp geometric edges only */
+.card {
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: 0;  /* Bauhaus principle: No rounded corners */
+  overflow: hidden;
+  transition: all var(--transition-bauhaus);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-bauhaus-md);
+}
+
+/* Card parts */
+.card-image {
+  width: 100%;
+  height: 160px;  /* Reduced from 200px to 160px for Fortune 100 density (20% reduction) */
+  overflow: hidden;
+  position: relative;
+  background: var(--color-bg-alt);  /* Fallback for loading */
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;  /* Remove inline spacing */
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-body,
+.card-content {
+  padding: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) for better density */
+}
+
+.card-title {
+  font-size: var(--font-size-xl);  /* Reduced from 2xl for better hierarchy */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-title a {
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.card-title a:hover {
+  color: var(--color-primary);
+}
+
+.card-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--spacing-md);
+}
+
+.card-text,
+.card-description {
+  font-size: var(--font-size-sm);  /* Reduced from base (16px) to sm (14px) for better density */
+  line-height: var(--line-height-normal);  /* Reduced from relaxed (1.75) to normal (1.5) */
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) */
+}
+
+.card-footer {
+  padding: var(--spacing-sm) var(--spacing-md);  /* Reduced padding for efficiency */
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Card variants */
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-horizontal .card-image {
+  width: 40%;
+  height: auto;
+}
+
+.card-horizontal .card-body {
+  width: 60%;
+}
+
+.card-bordered {
+  border: 3px solid var(--color-bauhaus-black);
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.card-flat {
+  border: none;
+  box-shadow: none;
+}
+
+/* Geometric card overlays */
+.card-geometric {
+  position: relative;
+}
+
+.card-geometric::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-accent);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 1;
+}
+
+/* Meta information in cards */
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Tags in cards */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);  /* Reduced from sm (8px) to xs (4px) for tighter spacing */
+  margin-bottom: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) */
+  margin-top: var(--spacing-sm);  /* Add small top margin */
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;  /* Reduced padding: 2px/8px (was 4px/16px) */
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  border-radius: 0;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bauhaus-white);
+}
+
+.tag-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bauhaus-white);
+}
+
+.tag-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-bauhaus-white);
+}
+
+.tag-accent {
+  background-color: var(--color-accent);
+  color: var(--color-bauhaus-black);
+}
+
+/* Project cards */
+.project-card {
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-bauhaus);
+}
+
+.project-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.project-status {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  border-radius: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.status-completed {
+  background-color: var(--color-success);
+  color: var(--color-bauhaus-white);
+}
+
+.status-in-progress {
+  background-color: var(--color-accent);
+  color: var(--color-bauhaus-black);
+}
+
+.status-planned {
+  background-color: var(--color-info);
+  color: var(--color-bauhaus-white);
+}
+
+/* Blog post cards - BAUHAUS: Bold borders, sharp edges */
+.post-card {
+  background-color: var(--color-bg);
+  border-left: 6px solid var(--color-primary);  /* Increased from 4px */
+  border-radius: 0;  /* Bauhaus: No rounded corners */
+  padding: var(--spacing-md);  /* Reduced from lg for better density */
+  transition: all var(--transition-fast);
+}
+
+.post-card:hover {
+  background-color: var(--color-bg-alt);
+  border-left-color: var(--color-secondary);
+  border-left-width: 8px;  /* Even bolder on hover */
+  padding-left: var(--spacing-lg);  /* Adjusted for new base padding */
+}
+
+.post-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Responsive cards */
+@media (max-width: 768px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+
+  .card-horizontal .card-image,
+  .card-horizontal .card-body {
+    width: 100%;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}

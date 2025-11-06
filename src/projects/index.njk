@@ -1,0 +1,72 @@
+---
+layout: base.njk
+title: Projects
+description: A collection of web design and development projects showcasing modern design principles and technical expertise.
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">
+            A collection of selected work in web design and development
+        </p>
+    </div>
+</section>
+
+<section class="projects-grid section">
+    <div class="container">
+        {% if collections.projects.length > 0 %}
+        <div class="grid grid--3-col">
+            {% for project in collections.projects %}
+            <article class="card project-card">
+                {% if project.data.image %}
+                <div class="card-image">
+                    <img src="{{ project.data.image | baseUrl }}" 
+                         alt="{{ project.data.title }}"
+                         loading="lazy">
+                </div>
+                {% endif %}
+                
+                <div class="card-content">
+                    <h2 class="card-title">
+                        <a href="{{ project.url | baseUrl }}">
+                            {{ project.data.title }}
+                        </a>
+                    </h2>
+                    
+                    <p class="card-description">
+                        {{ project.data.description }}
+                    </p>
+                    
+                    {% if project.data.tags %}
+                    <div class="card-tags">
+                        {% for tag in project.data.tags %}
+                        {% if tag != "projects" %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    {% if project.data.status %}
+                    <span class="project-status project-status--{{ project.data.status }}">
+                        {{ project.data.status }}
+                    </span>
+                    {% endif %}
+                </div>
+                
+                <div class="card-footer">
+                    <a href="{{ project.url | baseUrl }}" class="card-link">
+                        View Project <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No projects yet. Check back soon!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>

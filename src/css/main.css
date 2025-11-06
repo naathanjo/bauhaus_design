@@ -1,0 +1,313 @@
+/* ========================================
+   BAUHAUS REVIVAL PORTFOLIO
+   Main CSS Entry Point
+   ======================================== */
+
+/* Design Tokens & Variables */
+@import url('./variables.css');
+
+/* Reset & Base */
+@import url('./reset.css');
+@import url('./base.css');
+
+/* Layout */
+@import url('./layout.css');
+
+/* Components */
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/navigation.css');
+@import url('./components/geometric.css');
+@import url('./components/footer.css');
+@import url('./components/forms.css');
+
+/* Animations */
+@import url('./animations.css');
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+  position: relative;
+  padding: var(--spacing-2xl) 0;  /* Reduced from 3xl (64px) to 2xl (48px) for Fortune 100 efficiency */
+  background: linear-gradient(
+    135deg,
+    var(--color-bg) 0%,
+    var(--color-bg-alt) 100%
+  );
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: var(--font-size-5xl);  /* Reduced from 7xl (96px) to 5xl (56px) for better proportion */
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);  /* Reduced from lg for tighter spacing */
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.hero-title .highlight {
+  color: var(--color-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-accent);
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-2xl);  /* Reduced from 3xl for better hierarchy */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);  /* Reduced from xl for tighter spacing */
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);  /* Reduced from xl for better readability */
+  line-height: 1.6;  /* Reduced from relaxed (1.75) for efficiency */
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);  /* Reduced from 2xl */
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   PAGE HEADERS
+   ======================================== */
+
+.page-header {
+  padding: var(--spacing-xl) 0 var(--spacing-md);  /* Reduced from 2xl/xl to xl/md (32px/16px) for efficiency */
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--font-size-3xl);  /* Reduced from 4xl (40px) to 3xl (32px) for better proportion */
+  font-weight: var(--font-weight-black);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);  /* Reduced from xl (32px) to md (16px) for efficiency */
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);  /* Further reduced: 32px */
+  font-weight: var(--font-weight-black);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;  /* Smaller underline */
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-base);  /* Reduced from xl */
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: var(--spacing-md) auto 0;  /* Reduced from lg */
+}
+
+/* ========================================
+   PROJECT SHOWCASE
+   ======================================== */
+
+.projects-section {
+  padding: var(--spacing-2xl) 0;  /* Reduced from 4xl (96px) to 2xl (48px) */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-md);  /* Reduced from 2xl (48px) to md (16px) for better density */
+  margin-bottom: var(--spacing-lg);  /* Reduced from 2xl (48px) to lg (24px) */
+}
+
+/* ========================================
+   BLOG SECTION
+   ======================================== */
+
+.blog-section {
+  padding: var(--spacing-2xl) 0;  /* Reduced from 4xl (96px) to 2xl (48px) */
+  background-color: var(--color-bg-alt);
+}
+
+.posts-list {
+  display: grid;
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CTA SECTION - OPTIMIZED SPACING
+   ======================================== */
+
+.cta,
+.cta-section,
+.contact-cta {
+  padding: var(--spacing-xl) 0;  /* Reduced from 3xl (64px) to xl (32px) for efficiency */
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  color: var(--color-bauhaus-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: var(--font-size-3xl);  /* Reduced from 5xl */
+  color: var(--color-bauhaus-white);
+  margin-bottom: var(--spacing-md);  /* Reduced from lg */
+}
+
+.cta-text {
+  font-size: var(--font-size-lg);  /* Reduced from xl */
+  color: var(--color-concrete);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);  /* Reduced from xl */
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet adjustments: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: var(--font-size-4xl);  /* Slightly smaller for tablet */
+  }
+}
+
+/* Mobile adjustments: Below 768px */
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--spacing-xl) 0;  /* Further reduced on mobile */
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);  /* Much smaller on mobile */
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-lg);  /* Reduced subtitle */
+  }
+
+  .hero-description {
+    font-size: var(--font-size-base);  /* Standard text size */
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: var(--font-size-3xl);  /* Smaller page titles */
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);  /* Smaller section titles */
+  }
+
+  .cta-title {
+    font-size: var(--font-size-2xl);  /* Smaller CTA */
+  }
+  
+  /* Tighter spacing on mobile */
+  .card-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Small mobile: Below 480px */
+@media (max-width: 479px) {
+  .hero-title {
+    font-size: var(--font-size-2xl);  /* Very compact on small screens */
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .container {
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+  }
+}

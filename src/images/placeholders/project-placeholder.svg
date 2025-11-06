@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bauhaus-text {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f5f5"/>
+  
+  <!-- Smaller Red Circle (60% reduction) -->
+  <circle cx="250" cy="250" r="60" fill="#e31e24" opacity="0.6"/>
+  
+  <!-- Smaller Blue Square (60% reduction) -->
+  <rect x="500" y="200" width="80" height="80" fill="#004f9f" opacity="0.6"/>
+  
+  <!-- Smaller Yellow Triangle (60% reduction) -->
+  <polygon points="640,380 680,420 600,420" fill="#ffd100" opacity="0.6"/>
+  
+  <!-- Grid Lines (subtle structure) -->
+  <line x1="267" y1="0" x2="267" y2="500" stroke="#000000" stroke-width="1" opacity="0.15"/>
+  <line x1="533" y1="0" x2="533" y2="500" stroke="#000000" stroke-width="1" opacity="0.15"/>
+  <line x1="0" y1="167" x2="800" y2="167" stroke="#000000" stroke-width="1" opacity="0.15"/>
+  <line x1="0" y1="333" x2="800" y2="333" stroke="#000000" stroke-width="1" opacity="0.15"/>
+  
+  <!-- Outer Frame (bold) -->
+  <rect x="0" y="0" width="800" height="500" fill="none" stroke="#000000" stroke-width="8"/>
+  
+  <!-- Inner Frame Accent -->
+  <rect x="20" y="20" width="760" height="460" fill="none" stroke="#000000" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Text Label -->
+  <text x="400" y="470" class="bauhaus-text" font-size="18" text-anchor="middle" fill="#000000" opacity="0.5">
+    PROJECT SCREENSHOT
+  </text>
+</svg>
