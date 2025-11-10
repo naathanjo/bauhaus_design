@@ -4,32 +4,37 @@
 // THEME TOGGLE
 // ========================================
 (function initThemeToggle() {
-  const themeToggle = document.getElementById('theme-toggle');
+  const mobileThemeToggle = document.getElementById('theme-toggle');
+  const desktopThemeToggle = document.getElementById('desktop-theme-toggle');
   const htmlElement = document.documentElement;
-  const themeIcon = themeToggle?.querySelector('.theme-icon');
-
+  
   // Get stored theme or default to light
   const storedTheme = localStorage.getItem('theme') || 'light';
   htmlElement.setAttribute('data-theme', storedTheme);
-  updateThemeIcon(storedTheme);
+  updateThemeIcons(storedTheme);
 
-  // Theme toggle event listener
-  themeToggle?.addEventListener('click', function () {
+  // Theme toggle function
+  function toggleTheme() {
     const currentTheme = htmlElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
+    updateThemeIcons(newTheme);
     
     // Announce theme change to screen readers
     announceThemeChange(newTheme);
-  });
+  }
 
-  function updateThemeIcon(theme) {
-    if (themeIcon) {
-      themeIcon.textContent = theme === 'light' ? '☀' : '🌙';
-    }
+  // Add event listeners to both toggles
+  mobileThemeToggle?.addEventListener('click', toggleTheme);
+  desktopThemeToggle?.addEventListener('click', toggleTheme);
+
+  function updateThemeIcons(theme) {
+    const icons = document.querySelectorAll('.theme-icon');
+    icons.forEach(icon => {
+      icon.textContent = theme === 'light' ? '☀' : '🌙';
+    });
   }
 
   function announceThemeChange(theme) {

@@ -19,7 +19,7 @@
 
 /* Navbar */
 .navbar {
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;  /* Reduced for mobile efficiency */
 }
 
 .nav-container {
@@ -100,7 +100,7 @@
 
 /* Nav actions (theme toggle, etc.) */
 .nav-actions {
-  display: flex;
+  display: none;  /* Hidden on desktop, shown in mobile menu */
   align-items: center;
   gap: var(--spacing-md);
 }
@@ -169,6 +169,29 @@
   transition: color var(--transition-fast);
 }
 
+/* Desktop-only theme toggle */
+.desktop-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-border);
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.desktop-theme-toggle:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.desktop-theme-toggle:hover .theme-icon {
+  color: var(--color-bauhaus-white);
+}
+
 /* Footer navigation */
 .footer-nav {
   display: flex;
@@ -190,24 +213,37 @@
    ======================================== */
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-sm) 0;  /* Even tighter on mobile */
+  }
+
+  .nav-brand {
+    font-size: var(--font-size-lg);  /* Smaller brand text on mobile */
+  }
+
   .hamburger {
     display: flex;
   }
 
+  .desktop-theme-toggle {
+    display: none;  /* Hide desktop theme toggle on mobile */
+  }
+
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 60px;  /* Adjusted for smaller navbar */
     left: -100%;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 60px);
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     background-color: var(--color-bg);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);  /* Reduced padding */
     box-shadow: var(--shadow-lg);
     transition: left var(--transition-bauhaus);
     overflow-y: auto;
+    z-index: var(--z-dropdown);
   }
 
   .nav-menu.active {
@@ -230,11 +266,29 @@
   }
 
   .nav-actions {
+    display: flex;  /* Show in mobile menu */
     order: -1;
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-lg);
     border-bottom: 2px solid var(--color-border);
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-actions-label {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .desktop-theme-toggle {
+    display: flex;  /* Show desktop theme toggle on larger screens */
   }
 }
 

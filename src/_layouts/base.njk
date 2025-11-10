@@ -81,6 +81,16 @@
                 
                 <!-- Navigation Menu -->
                 <ul class="nav-menu">
+                    <!-- Mobile theme toggle (shows inside mobile menu) -->
+                    <div class="nav-actions">
+                        <span class="nav-actions-label">Settings</span>
+                        <button class="theme-toggle" 
+                                aria-label="Toggle dark mode" 
+                                id="theme-toggle">
+                            <span class="theme-icon" aria-hidden="true">☀</span>
+                        </button>
+                    </div>
+                    
                     {% for item in site.navigation %}
                     <li class="nav-item">
                         <a href="{{ item.url | baseUrl }}" 
@@ -91,14 +101,12 @@
                     {% endfor %}
                 </ul>
                 
-                <!-- Actions: Theme toggle -->
-                <div class="nav-actions">
-                    <button class="theme-toggle" 
-                            aria-label="Toggle dark mode" 
-                            id="theme-toggle">
-                        <span class="theme-icon" aria-hidden="true">☀</span>
-                    </button>
-                </div>
+                <!-- Desktop theme toggle (shows only on desktop) -->
+                <button class="desktop-theme-toggle" 
+                        aria-label="Toggle dark mode" 
+                        id="desktop-theme-toggle">
+                    <span class="theme-icon" aria-hidden="true">☀</span>
+                </button>
                 
                 <!-- Mobile hamburger menu -->
                 <button class="hamburger" 
