@@ -30,7 +30,7 @@
 
 .hero {
   position: relative;
-  padding: var(--spacing-2xl) 0;  /* Reduced from 3xl (64px) to 2xl (48px) for Fortune 100 efficiency */
+  padding: var(--spacing-xl) 0;  /* Bauhaus efficiency: reduced to xl (32px) for tighter spacing */
   background: linear-gradient(
     135deg,
     var(--color-bg) 0%,
@@ -44,15 +44,16 @@
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;  /* Bauhaus asymmetry: left-aligned instead of center */
 }
 
 .hero-title {
-  font-size: var(--font-size-5xl);  /* Reduced from 7xl (96px) to 5xl (56px) for better proportion */
+  font-size: var(--font-size-6xl);  /* Bauhaus boldness: increased for dramatic hierarchy */
   font-weight: var(--font-weight-black);
   line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-md);  /* Reduced from lg for tighter spacing */
+  margin-bottom: var(--spacing-sm);  /* Tighter spacing for efficiency */
   letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;  /* Bauhaus geometric typography */
 }
 
 .hero-title .highlight {
@@ -73,12 +74,12 @@
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-2xl);  /* Reduced from 3xl for better hierarchy */
+  font-size: var(--font-size-sm);  /* Bauhaus contrast: much smaller for hierarchy */
   font-weight: var(--font-weight-medium);
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-md);  /* Reduced from xl for tighter spacing */
+  margin-bottom: var(--spacing-lg);  /* Spacing for CTA buttons */
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 3px;  /* Bauhaus wide letter spacing */
 }
 
 .hero-description {
@@ -92,8 +93,55 @@
 .hero-actions {
   display: flex;
   gap: var(--spacing-md);
-  justify-content: center;
+  justify-content: flex-start;  /* Bauhaus asymmetry: left-aligned buttons */
   flex-wrap: wrap;
+}
+
+/* ========================================
+   GEOMETRIC DECORATION IN HERO
+   ======================================== */
+
+.geometric-decoration {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.geometric-decoration .shape {
+  position: absolute;
+  opacity: 0.15;  /* Bauhaus functional visibility */
+}
+
+.geometric-decoration .shape--circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-bauhaus-red);
+  top: 0;
+  right: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.geometric-decoration .shape--square {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-bauhaus-blue);
+  top: 60px;
+  right: 140px;
+  animation: rotate 12s linear infinite;
+}
+
+.geometric-decoration .shape--triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 52px 30px;
+  border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
+  top: -20px;
+  right: 200px;
+  animation: pulse 10s ease-in-out infinite;
 }
 
 /* ========================================
@@ -101,7 +149,7 @@
    ======================================== */
 
 .page-header {
-  padding: var(--spacing-xl) 0 var(--spacing-md);  /* Reduced from 2xl/xl to xl/md (32px/16px) for efficiency */
+  padding: var(--spacing-lg) 0 var(--spacing-sm);  /* Bauhaus efficiency: further reduced spacing */
   text-align: center;
 }
 
@@ -126,7 +174,7 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-md);  /* Reduced from xl (32px) to md (16px) for efficiency */
+  margin-bottom: var(--spacing-sm);  /* Bauhaus efficiency: further reduced to sm (8px) */
 }
 
 .section-title {

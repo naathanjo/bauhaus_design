@@ -78,9 +78,9 @@
   background-color: var(--color-bauhaus-red);
   width: 350px;
   height: 350px;
-  top: -20%;          /* Even more off-screen */
-  right: -10%;        /* Further away */
-  opacity: 0.03;      /* WHISPER: Almost invisible */
+  top: 10%;           /* Bauhaus asymmetry: more visible positioning */
+  right: 8%;          /* Strategic placement for dynamic balance */
+  opacity: 0.08;      /* More visible for Bauhaus boldness */
   animation: float 20s ease-in-out infinite;
 }
 
@@ -93,9 +93,9 @@
   background-color: var(--color-bauhaus-blue);
   width: 250px;
   height: 250px;
-  bottom: 10%;
-  left: -10%;         /* Even further off-screen */
-  opacity: 0.03;      /* WHISPER: Almost invisible */
+  bottom: 20%;
+  left: 5%;           /* Bauhaus functional positioning */
+  opacity: 0.06;      /* More visible for dynamic balance */
   animation: rotate 30s linear infinite;
 }
 
@@ -110,9 +110,9 @@
   border-style: solid;
   border-width: 0 125px 216.5px 125px;
   border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
-  top: 40%;
-  left: 1%;           /* Barely on screen */
-  opacity: 0.02;      /* GHOST: Nearly invisible */
+  top: 60%;
+  right: 15%;         /* Bauhaus strategic positioning for balance */
+  opacity: 0.05;      /* More visible yellow accent */
   animation: pulse 15s ease-in-out infinite;
 }
 

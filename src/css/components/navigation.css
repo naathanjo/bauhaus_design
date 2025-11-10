@@ -88,9 +88,14 @@
   color: var(--color-primary);
 }
 
-.nav-link:hover::after,
+.nav-link:hover::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
 .nav-link.active::after {
   width: 100%;
+  background-color: var(--color-accent);  /* Bauhaus yellow for active state */
 }
 
 /* Nav actions (theme toggle, etc.) */
