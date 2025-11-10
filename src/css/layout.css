@@ -188,15 +188,24 @@
 /* Mobile spacing adjustments */
 @media (max-width: 767px) {
   .section {
-    padding: var(--spacing-xl) 0;        /* Reduced on mobile */
+    padding: var(--spacing-lg) 0;        /* Better mobile spacing */
   }
 
   .section-lg {
-    padding: var(--spacing-2xl) 0;       /* Reduced on mobile */
+    padding: var(--spacing-xl) 0;        /* Better mobile spacing */
   }
   
   .container {
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
+    padding-left: var(--spacing-md);     /* Better mobile padding */
+    padding-right: var(--spacing-md);
+  }
+
+  /* Better mobile section spacing */
+  .section--alt {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .featured-projects {
+    padding: var(--spacing-lg) 0;
   }
 }

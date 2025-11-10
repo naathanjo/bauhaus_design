@@ -291,15 +291,33 @@
   .bg-circle--red {
     width: 200px;
     height: 200px;
+    top: 5%;  /* Move higher to avoid text overlap */
+    right: -5%;  /* Move more off-screen */
+    opacity: 0.04;  /* Much more subtle on mobile */
   }
 
   .bg-square--blue {
     width: 150px;
     height: 150px;
+    bottom: 30%;  /* Better positioning */
+    left: -5%;  /* Move more off-screen */
+    opacity: 0.04;  /* Much more subtle on mobile */
+  }
+
+  .bg-triangle--yellow {
+    opacity: 0.03;  /* Even more subtle */
+    right: 20%;  /* Better positioning */
+    top: 70%;  /* Move lower */
+  }
+
+  .geometric-decoration {
+    top: 5%;  /* Move hero decoration higher */
+    right: 5%;  /* Better mobile positioning */
+    transform: scale(0.7);  /* Smaller on mobile */
   }
 
   .geometric-frame::before,
   .geometric-frame::after {
-    display: none;
+    display: none;  /* Hide decorative frames on mobile */
   }
 }

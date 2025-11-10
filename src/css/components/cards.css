@@ -250,6 +250,11 @@
 
 /* Responsive cards */
 @media (max-width: 768px) {
+  .card {
+    margin-bottom: var(--spacing-lg);  /* Better spacing between cards */
+    border-width: 1px;  /* Thinner borders on mobile */
+  }
+
   .card-horizontal {
     flex-direction: column;
   }
@@ -260,6 +265,20 @@
   }
 
   .card-image {
-    height: 200px;
+    height: 180px;  /* Better aspect ratio for mobile */
+  }
+
+  .card-content {
+    padding: var(--spacing-md);  /* Better mobile padding */
+  }
+
+  .card-title {
+    font-size: var(--font-size-lg);  /* Better mobile typography */
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .card-description {
+    font-size: var(--font-size-sm);  /* Smaller text on mobile */
+    line-height: 1.5;
   }
 }
