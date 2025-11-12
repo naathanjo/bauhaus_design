@@ -1,3 +1,6 @@
+/* Import Professional Typography Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Sohne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
 /* ========================================
    MODERN FLAT DESIGN - CSS CUSTOM PROPERTIES
    Professional & Endearing Design System
@@ -26,6 +29,11 @@
   --color-brand-warmth-light: #fb923c;
   --color-brand-warmth-dark: #ea580c;
   
+  /* Accent Accent Color - Replace black square */
+  --color-brand-accent-highlight: #f97316;    /* Vibrant orange */
+  --color-brand-accent-highlight-light: #fb923c;
+  --color-brand-accent-highlight-dark: #ea580c;
+  
   /* Neutral Foundation */
   --color-white: #ffffff;
   --color-black: #000000;
@@ -39,6 +47,19 @@
   --color-slate-700: #334155;
   --color-slate-800: #1e293b;
   --color-slate-900: #0f172a;
+  
+  /* Premium Dark Charcoal - Replaces boring black */
+  --color-charcoal-50: #f9f8f7;
+  --color-charcoal-100: #f3f1ef;
+  --color-charcoal-200: #e8e4df;
+  --color-charcoal-300: #d4ccc3;
+  --color-charcoal-400: #b8ada0;
+  --color-charcoal-500: #a49583;
+  --color-charcoal-600: #8b7a6b;
+  --color-charcoal-700: #6b5d54;
+  --color-charcoal-800: #4a413a;
+  --color-charcoal-900: #2a2420;
+  --color-charcoal-950: #1a1410;
   
   /* Semantic Assignments */
   --color-primary: var(--color-brand-primary);
@@ -57,12 +78,16 @@
   --color-warmth-light: var(--color-brand-warmth-light);
   --color-warmth-dark: var(--color-brand-warmth-dark);
   
-  /* Text Colors - Professional hierarchy */
-  --color-text-primary: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-700);
-  --color-text-tertiary: var(--color-slate-600);
-  --color-text-muted: var(--color-slate-500);
-  --color-text-disabled: var(--color-slate-400);
+  --color-highlight: var(--color-brand-accent-highlight);
+  --color-highlight-light: var(--color-brand-accent-highlight-light);
+  --color-highlight-dark: var(--color-brand-accent-highlight-dark);
+  
+  /* Text Colors - Professional hierarchy with warm charcoal */
+  --color-text-primary: var(--color-charcoal-950);
+  --color-text-secondary: var(--color-charcoal-700);
+  --color-text-tertiary: var(--color-charcoal-600);
+  --color-text-muted: var(--color-charcoal-500);
+  --color-text-disabled: var(--color-charcoal-400);
   --color-text-inverse: var(--color-white);
   
   /* Link Colors - WCAG AAA compliant */
@@ -73,15 +98,15 @@
   
   /* Background Colors */
   --color-bg-primary: var(--color-white);
-  --color-bg-secondary: var(--color-slate-50);
-  --color-bg-tertiary: var(--color-slate-100);
-  --color-bg-inverse: var(--color-slate-900);
-  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-secondary: var(--color-charcoal-50);
+  --color-bg-tertiary: var(--color-charcoal-100);
+  --color-bg-inverse: var(--color-charcoal-950);
+  --color-bg-overlay: rgba(42, 36, 32, 0.5);
   
   /* Border Colors */
-  --color-border-light: var(--color-slate-200);
-  --color-border-base: var(--color-slate-300);
-  --color-border-dark: var(--color-slate-400);
+  --color-border-light: var(--color-charcoal-200);
+  --color-border-base: var(--color-charcoal-300);
+  --color-border-dark: var(--color-charcoal-400);
   
   /* Semantic State Colors */
   --color-success: #10b981;
@@ -102,13 +127,13 @@
 
   /* ========================================
      TYPOGRAPHY SYSTEM
-     Professional & readable
+     Premium, unique, professional fonts
      ======================================== */
   
-  /* Font Families */
-  --font-display: 'Sora', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Fira Code', 'IBM Plex Mono', 'SF Mono', monospace;
+  /* Font Families - Distinctive & Professional */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -116,20 +141,21 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-black: 800;
+  --font-weight-black: 900;
   
   /* Line Heights - Generous for readability */
-  --line-height-tight: 1.2;
-  --line-height-snug: 1.375;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
-  --line-height-loose: 1.875;
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 1.9;
   
-  /* Letter Spacing */
-  --letter-spacing-tight: -0.02em;
+  /* Letter Spacing - More distinctive */
+  --letter-spacing-tight: -0.03em;
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.025em;
-  --letter-spacing-wider: 0.05em;
+  --letter-spacing-wide: 0.01em;
+  --letter-spacing-wider: 0.03em;
+  --letter-spacing-widest: 0.06em;
 
   /* ========================================
      SPACING SYSTEM
@@ -202,18 +228,18 @@
      Subtle depth for professionalism
      ======================================== */
   
-  /* Elevation system */
-  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px -1px rgba(15, 23, 42, 0.1);
-  --shadow-base: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1);
-  --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
-  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
-  --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
-  --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  /* Elevation system - adjusted for charcoal */
+  --shadow-xs: 0 1px 2px 0 rgba(42, 36, 32, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(42, 36, 32, 0.1), 0 1px 2px -1px rgba(42, 36, 32, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(42, 36, 32, 0.1), 0 2px 4px -2px rgba(42, 36, 32, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(42, 36, 32, 0.1), 0 4px 6px -4px rgba(42, 36, 32, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(42, 36, 32, 0.1), 0 8px 10px -6px rgba(42, 36, 32, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(42, 36, 32, 0.15);
+  --shadow-2xl: 0 25px 50px -12px rgba(42, 36, 32, 0.25);
   
   /* Inset shadows for depth */
-  --shadow-inset-sm: inset 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-inset-md: inset 0 2px 4px 0 rgba(15, 23, 42, 0.1);
+  --shadow-inset-sm: inset 0 1px 2px 0 rgba(42, 36, 32, 0.05);
+  --shadow-inset-md: inset 0 2px 4px 0 rgba(42, 36, 32, 0.1);
 
   /* ========================================
      TRANSITIONS & ANIMATIONS
@@ -277,30 +303,29 @@
   
   --color-accent: #34d399;
   
-  --color-text-primary: var(--color-slate-50);
-  --color-text-secondary: var(--color-slate-200);
-  --color-text-tertiary: var(--color-slate-300);
-  --color-text-muted: var(--color-slate-400);
+  --color-highlight: #fbbf24;
+  --color-highlight-light: #fcd34d;
+  --color-highlight-dark: #f59e0b;
   
-  --color-bg-primary: #111827;        /* Deep, welcoming dark */
-  --color-bg-secondary: #1f2937;      /* Slightly lighter */
-  --color-bg-tertiary: #374151;       /* Even lighter for contrast */
+  --color-text-primary: var(--color-charcoal-50);
+  --color-text-secondary: var(--color-charcoal-200);
+  --color-text-tertiary: var(--color-charcoal-300);
+  --color-text-muted: var(--color-charcoal-400);
+  
+  --color-bg-primary: #0f0c09;         /* Deep, warm dark */
+  --color-bg-secondary: #1a1410;       /* Slightly lighter */
+  --color-bg-tertiary: #2a2420;        /* Even lighter for contrast */
   --color-bg-inverse: var(--color-white);
   
-  --color-border-light: #374151;
-  --color-border-base: #4b5563;
-  --color-border-dark: #6b7280;
-  
-  /* Warm accent pops on dark */
-  --color-warmth: #fbbf24;
-  --color-warmth-light: #fcd34d;
-  --color-warmth-dark: #f59e0b;
+  --color-border-light: #2a2420;
+  --color-border-base: #3a3430;
+  --color-border-dark: #4a413a;
   
   /* Adjusted shadows for dark mode */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
-  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
 }
 
 /* ========================================
@@ -320,7 +345,7 @@
     --container-padding-y: var(--spacing-lg);
     
     /* Slightly smaller text on mobile */
-    --line-height-tight: 1.25;
+    --line-height-tight: 1.15;
     --line-height-normal: 1.55;
   }
 }
@@ -341,8 +366,8 @@
 
 @media (prefers-contrast: more) {
   :root {
-    --color-text-primary: var(--color-slate-950, #030712);
-    --color-border-base: var(--color-slate-500);
+    --color-text-primary: var(--color-charcoal-950);
+    --color-border-base: var(--color-charcoal-600);
   }
 }
 
