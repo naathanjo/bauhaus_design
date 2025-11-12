@@ -25,8 +25,8 @@
     <meta property="twitter:description" content="{{ description or site.description }}">
     
     <!-- PWA / Mobile -->
-    <meta name="theme-color" content="#dc2626" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a2e" media="(prefers-color-scheme: dark)">
     <link rel="manifest" href="{{ '/manifest.json' | baseUrl }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | baseUrl }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | baseUrl }}">
@@ -80,88 +80,79 @@
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="sr-only-link">Skip to main content</a>
     
-    <!-- Geometric background elements - Kandinsky's color-form associations -->
-    <div class="geometric-background" aria-hidden="true">
-        <div class="bg-circle bg-circle--blue"></div>
-        <div class="bg-square bg-square--red"></div>
-        <div class="bg-triangle bg-triangle--yellow"></div>
+    <!-- Animated gradient background -->
+    <div class="ambient-canvas" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--primary"></div>
+        <div class="gradient-orb gradient-orb--secondary"></div>
+        <div class="gradient-orb gradient-orb--tertiary"></div>
+        <div class="noise-overlay"></div>
     </div>
 
     <!-- Site Header & Navigation -->
-    <header class="site-header">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
+    <header class="header-wrapper">
+        <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-inner">
                 <!-- Brand / Logo -->
-                <a href="{{ '/' | baseUrl }}" class="nav-brand" aria-label="Home">
-                    {{ site.title }}
+                <a href="{{ '/' | baseUrl }}" class="brand-mark" aria-label="Home">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">{{ site.title }}</span>
                 </a>
                 
                 <!-- Navigation Menu -->
-                <ul class="nav-menu">
-                    <!-- Mobile theme toggle (shows inside mobile menu) -->
-                    <li class="nav-item nav-item--actions">
-                        <div class="nav-actions">
-                            <span class="nav-actions-label">Theme</span>
-                            <button class="theme-toggle" 
-                                    aria-label="Toggle dark mode" 
-                                    id="theme-toggle">
-                                <span class="theme-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </li>
-                    
+                <ul class="menu-list">
                     {% for item in site.navigation %}
-                    <li class="nav-item">
+                    <li class="menu-item">
                         <a href="{{ item.url | baseUrl }}" 
-                           class="nav-link {% if page.url == item.url or (item.url != '/' and item.url in page.url) %}active{% endif %}">
+                           class="menu-link {% if page.url == item.url or (item.url != '/' and item.url in page.url) %}menu-link--current{% endif %}">
                             {{ item.text }}
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
                 
-                <!-- Desktop theme toggle (shows only on desktop) -->
-                <button class="desktop-theme-toggle" 
-                        aria-label="Toggle dark mode" 
-                        id="desktop-theme-toggle">
-                    <span class="theme-icon" aria-hidden="true"></span>
-                </button>
-                
-                <!-- Mobile hamburger menu -->
-                <button class="hamburger" 
-                        aria-label="Toggle navigation menu"
-                        aria-expanded="false"
-                        id="mobile-menu-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+                <!-- Right Actions -->
+                <div class="nav-actions">
+                    <button class="theme-switcher theme-switcher--desktop" 
+                            aria-label="Toggle dark mode" 
+                            id="desktop-theme-toggle">
+                        <span class="switcher-icon" aria-hidden="true">☀️</span>
+                    </button>
+                    
+                    <button class="menu-toggle" 
+                            aria-label="Toggle navigation menu"
+                            aria-expanded="false"
+                            id="mobile-menu-toggle">
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="main-content" id="main-content">
+    <main class="page-content" id="main-content">
         {{ content | safe }}
     </main>
 
     <!-- Site Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
+    <footer class="footer-section">
+        <div class="footer-inner">
             <!-- Footer Content -->
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; {{ '' | currentYear }} {{ site.author }}. Designed with Bauhaus principles.</p>
+            <div class="footer-main">
+                <div class="footer-message">
+                    <p>&copy; {{ '' | currentYear }} {{ site.author }}. Crafted with care and creativity.</p>
                 </div>
                 
                 <!-- Social Links -->
                 {% if site.social %}
-                <div class="social-links">
+                <div class="social-connect">
                     {% if site.social.github %}
                     <a href="{{ site.social.github }}" 
-                       class="social-link" 
+                       class="social-icon" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="GitHub">
@@ -173,7 +164,7 @@
                     
                     {% if site.social.linkedin %}
                     <a href="{{ site.social.linkedin }}" 
-                       class="social-link" 
+                       class="social-icon" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="LinkedIn">
@@ -185,19 +176,19 @@
                     
                     {% if site.social.twitter %}
                     <a href="{{ site.social.twitter }}" 
-                       class="social-link" 
+                       class="social-icon" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="Twitter">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                         </svg>
                     </a>
                     {% endif %}
                     
                     {% if site.social.dribbble %}
                     <a href="{{ site.social.dribbble }}" 
-                       class="social-link" 
+                       class="social-icon" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="Dribbble">
@@ -211,8 +202,8 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>Built with Eleventy • Designed with Bauhaus Principles</p>
+            <div class="footer-colophon">
+                <p>Built with Eleventy • Designed for Impact</p>
             </div>
         </div>
     </footer>
@@ -221,6 +212,6 @@
     <script src="{{ '/js/main.js' | baseUrl }}" defer></script>
     <script src="{{ '/js/animations.js' | baseUrl }}" type="module" defer></script>
     <script src="{{ '/js/forms.js' | baseUrl }}" type="module" defer></script>
-    <script src="{{ '/js/color-theory.js' | baseUrl }}" defer></script>
+    <script src="{{ '/js/interactions.js' | baseUrl }}" defer></script>
 </body>
 </html>

@@ -1,258 +1,165 @@
 ---
 layout: base.njk
 title: Home
-description: Experience the Bauhaus movement through digital design - a museum-grade exhibition of geometric modernism, functional aesthetics, and revolutionary design philosophy
+description: Discover the Bauhaus movement through a clean, modern lens - geometric design principles for the digital age
 ---
 
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <!-- Geometric decorative elements -->
-            <div class="geometric-decoration" aria-hidden="true">
-                <div class="shape shape--circle"></div>
-                <div class="shape shape--square"></div>
-                <div class="shape shape--triangle"></div>
-            </div>
-            
             <h1 class="hero-title">
                 Bauhaus Revival
             </h1>
             
             <p class="hero-subtitle">
-                Form follows function. Where geometric purity meets digital innovation.
+                Where geometric purity meets modern simplicity. Form follows function in the digital age.
             </p>
             
             <div class="hero-cta">
-                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary">
-                    Explore the Movement
-                    <span aria-hidden="true">→</span>
+                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary btn--large">
+                    Learn More
                 </a>
-                <a href="{{ '/about/' | baseUrl }}" class="btn btn--outline">
-                    Design Philosophy
+                <a href="{{ '/contact/' | baseUrl }}" class="btn btn--secondary btn--large">
+                    Get Started
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Principles Section -->
+<section class="principles section">
+    <div class="container">
+        <h2 class="section-title">Core Principles</h2>
+        
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-icon">○</div>
+                <h3>Form Follows Function</h3>
+                <p>Design must serve purpose. Every element justified by its utility and necessity.</p>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-icon">□</div>
+                <h3>Geometric Harmony</h3>
+                <p>Primary shapes create universal language. Circle, square, triangle define balance.</p>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-icon">△</div>
+                <h3>Unity of Design</h3>
+                <p>Breaking barriers between art and craft. One cohesive philosophy across disciplines.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Featured Projects Section -->
-<section class="featured-projects section">
+<section class="featured section section--light">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Core Principles</h2>
-            <p class="section-subtitle">
-                The foundational concepts that defined modernist design
-            </p>
-        </div>
+        <h2 class="section-title">Explore the Movement</h2>
         
-        <div class="grid grid--3-col">
+        <div class="featured-grid">
             {% set featuredProjects = collections.projects | filter('featured') | limit(3) %}
             {% if featuredProjects.length > 0 %}
                 {% for project in featuredProjects %}
-                <article class="card project-card card-geometric">
+                <a href="{{ project.url | baseUrl }}" class="featured-card">
                     {% if project.data.image %}
-                    <div class="card-image">
+                    <div class="featured-image">
                         <img src="{{ project.data.image | baseUrl }}" 
                              alt="{{ project.data.title }}"
                              loading="lazy">
                     </div>
                     {% endif %}
-                    
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            <a href="{{ project.url | baseUrl }}">
-                                {{ project.data.title }}
-                            </a>
-                        </h3>
-                        
-                        <p class="card-description">
-                            {{ project.data.description or (project.templateContent | excerpt) }}
-                        </p>
-                        
-                        {% if project.data.tags %}
-                        <div class="card-tags">
-                            {% for tag in project.data.tags %}
-                            {% if tag != "projects" %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        
-                        {% if project.data.status %}
-                        <span class="project-status status-{{ project.data.status }}">
-                            {{ project.data.status }}
-                        </span>
-                        {% endif %}
+                    <div class="featured-info">
+                        <h3>{{ project.data.title }}</h3>
+                        <p>{{ project.data.description or (project.templateContent | excerpt) }}</p>
                     </div>
-                    
-                    <div class="card-footer">
-                        <a href="{{ project.url | baseUrl }}" class="card-link">
-                            Explore Principle <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
-                </article>
+                </a>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder content -->
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Form Follows Function</h3>
-                        <p class="card-description">Design must serve purpose above all else. Every element justified by its utility.</p>
-                        <div class="card-tags">
-                            <span class="tag">1919-1933</span>
-                            <span class="tag">Weimar</span>
-                        </div>
+                <a href="#" class="featured-card">
+                    <div class="featured-info">
+                        <h3>Form Follows Function</h3>
+                        <p>Design serving purpose above all else.</p>
                     </div>
-                </article>
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Geometric Abstraction</h3>
-                        <p class="card-description">Primary shapes as universal language. Circle, square, triangle define spatial harmony.</p>
-                        <div class="card-tags">
-                            <span class="tag">Modernism</span>
-                            <span class="tag">Gropius</span>
-                        </div>
+                </a>
+                <a href="#" class="featured-card">
+                    <div class="featured-info">
+                        <h3>Geometric Abstraction</h3>
+                        <p>Primary shapes as universal language.</p>
                     </div>
-                </article>
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Unity of Arts</h3>
-                        <p class="card-description">Dissolving barriers between fine art, craft, and industrial design.</p>
-                        <div class="card-tags">
-                            <span class="tag">Dessau</span>
-                            <span class="tag">Revolution</span>
-                        </div>
+                </a>
+                <a href="#" class="featured-card">
+                    <div class="featured-info">
+                        <h3>Unity of Arts</h3>
+                        <p>Dissolving barriers between disciplines.</p>
                     </div>
-                </article>
+                </a>
             {% endif %}
-        </div>
-        
-        <div class="section-footer">
-            <a href="{{ '/projects/' | baseUrl }}" class="btn btn--secondary">
-                View All Principles
-                <span aria-hidden="true">→</span>
-            </a>
         </div>
     </div>
 </section>
 
-<!-- Recent Blog Posts Section -->
-<section class="recent-posts section section--alt">
+<!-- Blog Timeline Section -->
+<section class="timeline section">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Historical Context</h2>
-            <p class="section-subtitle">
-                Understanding the movement that transformed modern design
-            </p>
-        </div>
+        <h2 class="section-title">Historical Journey</h2>
         
-        <div class="grid grid--3-col">
+        <div class="timeline-container">
             {% set recentPosts = collections.blog | reverse | limit(3) %}
             {% if recentPosts.length > 0 %}
                 {% for post in recentPosts %}
-                <article class="card post-card">
-                    <div class="card-content">
-                        {% if post.data.date %}
-                        <time class="card-date post-date" datetime="{{ post.data.date | dateFormat('YYYY-MM-DD') }}">
-                            {{ post.data.date | dateFormat('MMMM D, YYYY') }}
-                        </time>
-                        {% endif %}
-                        
-                        <h3 class="card-title">
-                            <a href="{{ post.url | baseUrl }}">
-                                {{ post.data.title }}
-                            </a>
-                        </h3>
-                        
-                        <p class="card-description">
-                            {{ post.data.description or (post.templateContent | excerpt) }}
-                        </p>
-                        
-                        {% if post.data.tags %}
-                        <div class="card-tags">
-                            {% for tag in post.data.tags %}
-                            {% if tag != "blog" %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        {% endif %}
+                <a href="{{ post.url | baseUrl }}" class="timeline-item">
+                    <div class="timeline-date">
+                        {{ post.data.date | dateFormat('YYYY') }}
                     </div>
-                    
-                    <div class="card-footer">
-                        <a href="{{ post.url | baseUrl }}" class="card-link">
-                            Read More <span aria-hidden="true">→</span>
-                        </a>
-                        {% if post.templateContent %}
-                        <span class="reading-time">{{ post.templateContent | readingTime }} min read</span>
-                        {% endif %}
+                    <div class="timeline-content">
+                        <h3>{{ post.data.title }}</h3>
+                        <p>{{ post.data.description or (post.templateContent | excerpt) }}</p>
                     </div>
-                </article>
+                </a>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder exhibition content -->
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">1919-1933</time>
-                        <h3 class="card-title">The Weimar Years</h3>
-                        <p class="card-description">Founded by Walter Gropius in Weimar, Germany, the Bauhaus revolutionized art education by uniting fine arts and craft.</p>
-                        <div class="card-tags">
-                            <span class="tag">Origins</span>
-                            <span class="tag">Gropius</span>
-                        </div>
+                <a href="#" class="timeline-item">
+                    <div class="timeline-date">1919</div>
+                    <div class="timeline-content">
+                        <h3>The Weimar Years</h3>
+                        <p>Founded by Walter Gropius, revolutionizing art education.</p>
                     </div>
-                </article>
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">1925-1932</time>
-                        <h3 class="card-title">Dessau & Industrial Design</h3>
-                        <p class="card-description">The move to Dessau marked the school's most productive period, producing iconic furniture and typography.</p>
-                        <div class="card-tags">
-                            <span class="tag">Moholy-Nagy</span>
-                            <span class="tag">Albers</span>
-                        </div>
+                </a>
+                <a href="#" class="timeline-item">
+                    <div class="timeline-date">1925</div>
+                    <div class="timeline-content">
+                        <h3>Dessau Era</h3>
+                        <p>Most productive period producing iconic furniture and design.</p>
                     </div>
-                </article>
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">1933-Present</time>
-                        <h3 class="card-title">Legacy & Influence</h3>
-                        <p class="card-description">Though closed by the Nazi regime, Bauhaus principles spread globally, shaping modernism for generations.</p>
-                        <div class="card-tags">
-                            <span class="tag">International Style</span>
-                            <span class="tag">Modernism</span>
-                        </div>
+                </a>
+                <a href="#" class="timeline-item">
+                    <div class="timeline-date">1933+</div>
+                    <div class="timeline-content">
+                        <h3>Global Legacy</h3>
+                        <p>Bauhaus principles spread worldwide, shaping modernism forever.</p>
                     </div>
-                </article>
+                </a>
             {% endif %}
-        </div>
-        
-        <div class="section-footer">
-            <a href="{{ '/blog/' | baseUrl }}" class="btn btn--secondary">
-                View All Articles
-                <span aria-hidden="true">→</span>
-            </a>
         </div>
     </div>
 </section>
 
-<!-- Call to Action Section -->
-<section class="cta-section section">
+<!-- CTA Section -->
+<section class="cta-final section section--accent">
     <div class="container">
-        <div class="cta-content">
-            <h2 class="cta-title">Experience Bauhaus Today</h2>
-            <p class="cta-text">
-                Discover how these revolutionary principles continue to shape contemporary design and digital experiences.
-            </p>
-            
-            <div class="cta-actions">
-                <a href="{{ '/contact/' | baseUrl }}" class="btn btn--accent btn--lg">
-                    Explore the Exhibition
-                    <span aria-hidden="true">→</span>
-                </a>
-            </div>
+        <h2>Ready to Explore?</h2>
+        <p>Join us in discovering how Bauhaus shapes modern design today.</p>
+        <div class="cta-buttons">
+            <a href="{{ '/projects/' | baseUrl }}" class="btn btn--light btn--large">
+                View All Projects
+            </a>
+            <a href="{{ '/contact/' | baseUrl }}" class="btn btn--outline-light btn--large">
+                Get in Touch
+            </a>
         </div>
     </div>
 </section>

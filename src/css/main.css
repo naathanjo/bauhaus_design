@@ -1,5 +1,5 @@
 /* ========================================
-   BAUHAUS REVIVAL PORTFOLIO
+   MODERN PORTFOLIO
    Main CSS Entry Point
    ======================================== */
 
@@ -17,15 +17,15 @@
 @import url('./layout.css');
 
 /* Components */
+@import url('./components/header.css');
+@import url('./components/navigation.css');
 @import url('./components/hero.css');
 @import url('./components/sections.css');
 @import url('./components/buttons.css');
 @import url('./components/cards.css');
-@import url('./components/navigation.css');
-@import url('./components/geometric.css');
 @import url('./components/footer.css');
 @import url('./components/forms.css');
-@import url('./components/color-theory.css');
+@import url('./components/animations.css');
 
 /* Animations */
 @import url('./animations.css');
@@ -34,30 +34,416 @@
 @import url('./print.css');
 
 /* ========================================
-   HERO & SECTION STYLES
-   Moved to dedicated component files:
-   - components/hero.css
-   - components/sections.css
+   HEADER & NAVIGATION WRAPPER
+   Foundation styles for header-wrapper, primary-nav, nav-inner
    ======================================== */
 
-/* Hero styles moved to components/hero.css */
+.header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.85) 100%);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
 
-/* Geometric decoration styles moved to components/hero.css */
+[data-theme="dark"] .header-wrapper {
+    background: linear-gradient(180deg, 
+        rgba(26, 26, 46, 0.95) 0%, 
+        rgba(26, 26, 46, 0.85) 100%);
+    border-bottom-color: rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
 
-/* Page header styles moved to components/sections.css */
+.primary-nav {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-/* Section header styles moved to components/sections.css */
-
-/* Project and blog section styles moved to components/sections.css */
-
-
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
 /* ========================================
-   RESPONSIVE DESIGN
-   Component-specific responsive styles moved to:
-   - Hero responsive: components/hero.css
-   - Section responsive: components/sections.css
-   - Navigation responsive: components/navigation.css
-   - Card responsive: components/cards.css
-   - Form responsive: components/forms.css
+   BRAND / LOGO
    ======================================== */
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.brand-mark:hover {
+    transform: scale(1.05);
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.logo-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="dark"] .logo-text {
+    background: linear-gradient(135deg, #818cf8 0%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   NAVIGATION MENU
+   ======================================== */
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.menu-item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.625rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    position: relative;
+}
+
+.menu-link:hover {
+    color: var(--text-primary);
+    background-color: rgba(99, 102, 241, 0.08);
+}
+
+.menu-link--current {
+    color: #6366f1;
+    font-weight: 600;
+    background-color: rgba(99, 102, 241, 0.12);
+}
+
+.menu-link--current::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6366f1;
+}
+
+[data-theme="dark"] .menu-link--current {
+    color: #a5b4fc;
+}
+
+[data-theme="dark"] .menu-link--current::after {
+    background: #a5b4fc;
+}
+
+/* ========================================
+   NAVIGATION ACTIONS
+   ======================================== */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* ========================================
+   THEME SWITCHER BUTTON
+   ======================================== */
+
+.theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.theme-switcher:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: scale(1.05);
+}
+
+.theme-switcher:active {
+    transform: scale(0.95);
+}
+
+.theme-switcher--desktop {
+    display: none;
+}
+
+.switcher-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Show desktop theme switcher on larger screens */
+@media (min-width: 768px) {
+    .theme-switcher--desktop {
+        display: inline-flex;
+    }
+}
+
+/* ========================================
+   MOBILE HAMBURGER MENU
+   ======================================== */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.toggle-bar {
+    width: 24px;
+    height: 2.5px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile menu toggle visible on small screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .nav-inner {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+    }
+}
+
+/* ========================================
+   ANIMATED BACKGROUND ELEMENTS
+   ======================================== */
+
+.ambient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: drift 20s ease-in-out infinite;
+}
+
+.gradient-orb--primary {
+    width: 400px;
+    height: 400px;
+    background: #6366f1;
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.gradient-orb--secondary {
+    width: 300px;
+    height: 300px;
+    background: #8b5cf6;
+    top: 50%;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.gradient-orb--tertiary {
+    width: 350px;
+    height: 350px;
+    background: #ec4899;
+    bottom: -100px;
+    left: 50%;
+    animation-delay: -10s;
+}
+
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(30px, -50px); }
+    50% { transform: translate(-20px, 20px); }
+    75% { transform: translate(50px, 50px); }
+}
+
+[data-theme="dark"] .gradient-orb {
+    opacity: 0.15;
+}
+
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='400' height='400' fill='white' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* ========================================
+   ACCESSIBILITY & UTILITY CLASSES
+   ======================================== */
+
+.sr-only-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .nav-inner {
+        gap: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .menu-list {
+        gap: 0.125rem;
+    }
+
+    .menu-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        border-bottom-width: 1px;
+    }
+
+    .nav-inner {
+        gap: 1rem;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .logo-icon {
+        font-size: 1.25rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .header-wrapper,
+    .ambient-canvas,
+    .menu-toggle,
+    .theme-switcher {
+        display: none;
+    }
+}
+
+
