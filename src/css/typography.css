@@ -1,6 +1,6 @@
 /* ========================================
-   FORTUNE 100 RESPONSIVE TYPOGRAPHY SYSTEM
-   Enterprise-grade type system with fluid scaling
+   HUMANIST MODERNISM RESPONSIVE TYPOGRAPHY SYSTEM
+   Enterprise-grade type system prioritizing readability and comfort
    ======================================== */
 
 /* ========================================
@@ -24,6 +24,7 @@
 /* ========================================
    2. FLUID FONT SIZE SYSTEM
    Using clamp() for smooth scaling between breakpoints
+   HM: Generous starting sizes for readability comfort
    ======================================== */
 
 :root {
@@ -40,10 +41,10 @@
   --font-size-h5: clamp(1rem, 2vw, 1.5rem);                /* 16px → 24px */
   --font-size-h6: clamp(0.95rem, 1.5vw, 1.25rem);          /* 15px → 20px */
   
-  /* Body Typography - Reading optimized */
-  --font-size-body-xl: clamp(1.125rem, 2vw, 1.375rem);     /* 18px → 22px */
-  --font-size-body-lg: clamp(1.063rem, 1.5vw, 1.25rem);    /* 17px → 20px */
-  --font-size-body: clamp(1rem, 1vw, 1.125rem);            /* 16px → 18px */
+  /* Body Typography - HM: Generous starting sizes (minimum 17px) */
+  --font-size-body-xl: clamp(1.25rem, 2vw, 1.375rem);      /* 20px → 22px */
+  --font-size-body-lg: clamp(1.125rem, 1.5vw, 1.25rem);    /* 18px → 20px */
+  --font-size-body: clamp(1.063rem, 1vw, 1.125rem);        /* 17px → 18px */
   --font-size-body-sm: clamp(0.875rem, 0.8vw, 1rem);       /* 14px → 16px */
   --font-size-body-xs: clamp(0.75rem, 0.6vw, 0.875rem);    /* 12px → 14px */
   
@@ -55,7 +56,7 @@
 
 /* ========================================
    3. RESPONSIVE LINE HEIGHT SYSTEM
-   Optimized for readability at all sizes
+   HM: Generous line spacing for reading comfort (1.7x minimum)
    ======================================== */
 
 :root {
@@ -65,11 +66,11 @@
   --line-height-heading-lg: 1.2;
   --line-height-heading: 1.25;
   
-  /* Body line heights - Optimized for reading */
+  /* Body line heights - HM: Optimized for comfortable reading */
   --line-height-body-tight: 1.4;
-  --line-height-body: 1.5;
-  --line-height-body-relaxed: 1.6;
-  --line-height-body-loose: 1.7;
+  --line-height-body: 1.7;
+  --line-height-body-relaxed: 1.8;
+  --line-height-body-loose: 1.9;
   
   /* UI line heights - Compact for interfaces */
   --line-height-ui: 1.3;
@@ -78,16 +79,16 @@
 
 /* ========================================
    4. RESPONSIVE LETTER SPACING
-   Bauhaus-inspired geometric precision
+   HM: Natural, open spacing without aggressive geometric tracking
    ======================================== */
 
 :root {
-  /* Responsive letter spacing that scales with font size */
-  --letter-spacing-display: clamp(-0.02em, -0.01vw, -0.015em);
-  --letter-spacing-heading: clamp(-0.01em, 0vw, 0.01em);
+  /* HM: No aggressive letter spacing - natural, warm typography */
+  --letter-spacing-display: 0;
+  --letter-spacing-heading: 0;
   --letter-spacing-body: 0;
   --letter-spacing-ui: clamp(0.01em, 0.1vw, 0.05em);
-  --letter-spacing-caps: clamp(0.05em, 0.2vw, 0.1em);     /* For uppercase */
+  --letter-spacing-caps: clamp(0.05em, 0.2vw, 0.1em);
 }
 
 /* ========================================
@@ -218,33 +219,27 @@
 }
 
 /* ========================================
-   6. BAUHAUS-SPECIFIC TYPOGRAPHY UTILITIES
+   6. HUMANIST MODERNISM TYPOGRAPHY UTILITIES
+   HM: Warm, accessible, empathetic styling
    ======================================== */
 
-/* Uppercase with proper spacing */
-.type-caps {
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-caps);
-  font-weight: var(--font-weight-semibold);
-}
-
-/* Bauhaus accent styles */
+/* Humanist accent styles - Warm, not aggressive */
 .type-accent {
   color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .type-accent--secondary {
   color: var(--color-secondary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
-.type-accent--yellow {
+.type-accent--warm {
   color: var(--color-accent);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
-/* Geometric text alignment */
+/* Warm text alignment */
 .type-left {
   text-align: left;
 }
@@ -263,11 +258,11 @@
 
 /* Prevent orphans and improve readability */
 .type-no-orphans {
-  text-wrap: balance; /* Modern browsers */
+  text-wrap: balance;
   hyphens: auto;
 }
 
-/* Improved readability for long content */
+/* Improved readability for long content - HM optimal measure */
 .type-readable {
   max-width: 70ch;
   margin-left: auto;
@@ -298,6 +293,7 @@
   .type-body-lg,
   .type-body-xl {
     font-weight: var(--font-weight-medium);
+    line-height: 1.8;
   }
 }
 
@@ -338,7 +334,7 @@
   .type-body-lg,
   .type-body-xl {
     font-size: 12pt;
-    line-height: 1.4;
+    line-height: 1.6;
   }
 }
 

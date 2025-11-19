@@ -2,11 +2,6 @@
 layout: base.njk
 ---
 
-<!-- Reading Progress Indicator -->
-<div class="reading-progress">
-    <div class="reading-progress-bar"></div>
-</div>
-
 <!-- Breadcrumbs Navigation -->
 <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="breadcrumbs-container">
@@ -16,7 +11,7 @@ layout: base.njk
                 <span class="breadcrumb-separator" aria-hidden="true">→</span>
             </li>
             <li class="breadcrumb-item">
-                <a href="{{ '/blog/' | baseUrl }}" class="breadcrumb-link">Thoughts</a>
+                <a href="{{ '/blog/' | baseUrl }}" class="breadcrumb-link">History</a>
                 <span class="breadcrumb-separator" aria-hidden="true">→</span>
             </li>
             <li class="breadcrumb-item">
@@ -101,7 +96,7 @@ layout: base.njk
         <div class="container container--narrow">
             <nav class="post-navigation" aria-label="Post navigation">
                 <a href="{{ '/blog/' | baseUrl }}" class="btn btn--outline">
-                    ← Back to Thoughts
+                    ← Back to History
                 </a>
             </nav>
         </div>
@@ -112,31 +107,31 @@ layout: base.njk
 <section class="related-content">
     <div class="related-content-header">
         <h2 class="related-content-title">Continue Your Exploration</h2>
-        <p class="related-content-subtitle">Discover more about Bauhaus principles and their contemporary applications</p>
+        <p class="related-content-subtitle">Discover more about Humanist Modernism principles and their applications</p>
     </div>
     <div class="related-grid">
         <a href="{{ '/projects/' | baseUrl }}" class="card">
             <div class="card-content">
-                <h3 class="card-title">Bauhaus Principles</h3>
-                <p class="card-description">Explore how form follows function through interactive demonstrations</p>
+                <h3 class="card-title">Design Principles</h3>
+                <p class="card-description">Explore how Humanist Modernism prioritizes readability through interactive demonstrations</p>
                 <div class="card-footer">
-                    <span class="card-link">View Projects →</span>
+                    <span class="card-link">View Principles →</span>
                 </div>
             </div>
         </a>
         <a href="{{ '/blog/' | baseUrl }}" class="card">
             <div class="card-content">
                 <h3 class="card-title">More Articles</h3>
-                <p class="card-description">Deep-dive into Bauhaus history, legacy, and contemporary influence</p>
+                <p class="card-description">Deep-dive into HM history, typography philosophy, and contemporary influence</p>
                 <div class="card-footer">
                     <span class="card-link">Read More →</span>
                 </div>
             </div>
         </a>
-        <a href="{{ '/about/' | baseUrl }}" class="card">
+        <a href="{{ '/examples/' | baseUrl }}" class="card">
             <div class="card-content">
-                <h3 class="card-title">About Bauhaus</h3>
-                <p class="card-description">Learn about the complete history from 1919 to its lasting global impact</p>
+                <h3 class="card-title">Canonical Examples</h3>
+                <p class="card-description">Learn how iA Writer, Medium, and data visualization exemplify HM principles</p>
                 <div class="card-footer">
                     <span class="card-link">Learn More →</span>
                 </div>
@@ -148,39 +143,39 @@ layout: base.njk
 <style>
 /* Post-specific styles */
 .post-header {
-    padding: var(--spacing-xl) 0 var(--spacing-lg);  /* Reduced from 3xl/2xl to xl/lg (32px/24px) */
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
     border-bottom: 1px solid var(--color-border);
 }
 
 .post-date {
     display: inline-block;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-xs);  /* Reduced from sm to xs (4px) */
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: var(--spacing-md);
 }
 
 .post-title {
-    font-size: var(--font-size-3xl);  /* Reduced from 4xl (40px) to 3xl (32px) */
-    font-weight: 900;
-    line-height: 1.1;
-    margin: var(--spacing-sm) 0;  /* Reduced from md to sm (8px) */
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
     color: var(--color-text);
 }
 
 .post-excerpt {
-    font-size: var(--font-size-lg);  /* Reduced from xl (20px) to lg (18px) */
-    color: var(--color-text-secondary);
-    margin: var(--spacing-md) 0;  /* Reduced from lg to md (16px) */
-    line-height: 1.6;
+    font-size: var(--font-size-body-lg);
+    color: var(--color-text-light);
+    margin: var(--spacing-lg) 0;
+    line-height: var(--line-height-relaxed);
 }
 
 .post-meta {
     display: flex;
     gap: var(--spacing-lg);
     align-items: center;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-muted);
     margin: var(--spacing-lg) 0;
 }
@@ -193,66 +188,70 @@ layout: base.njk
 }
 
 .post-content {
-    padding: var(--spacing-xl) 0;  /* Reduced from 3xl (64px) to xl (32px) */
+    padding: var(--spacing-3xl) 0;
 }
 
 .post-content h2 {
-    margin-top: var(--spacing-xl);  /* Reduced from 3xl (64px) to xl (32px) */
-    margin-bottom: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) */
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
 }
 
 .post-content h3 {
-    margin-top: var(--spacing-lg);  /* Reduced from 2xl (48px) to lg (24px) */
-    margin-bottom: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) */
-    font-size: var(--font-size-xl);
-    font-weight: 600;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
 }
 
 .post-content p {
-    margin-bottom: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) */
-    line-height: 1.7;  /* Reduced from 1.8 to 1.7 for tighter text */
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-body);
 }
 
 .post-content ul,
 .post-content ol {
-    margin: var(--spacing-md) 0;  /* Reduced from lg (24px) to md (16px) */
-    padding-left: var(--spacing-lg);  /* Reduced from xl (32px) to lg (24px) */
+    margin: var(--spacing-lg) 0;
+    padding-left: var(--spacing-xl);
 }
 
 .post-content li {
-    margin-bottom: var(--spacing-xs);  /* Reduced from sm (8px) to xs (4px) */
-    line-height: 1.7;  /* Reduced from 1.8 to 1.7 */
+    margin-bottom: var(--spacing-sm);
+    line-height: var(--line-height-body);
 }
 
 .post-content code {
-    background: var(--color-surface-raised);
-    padding: 0.125rem 0.375rem;
-    border-radius: 0;
+    background: var(--color-bg-alt);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
     font-size: 0.9em;
     font-family: 'Courier New', monospace;
+    color: var(--color-text);
 }
 
 .post-content pre {
-    background: var(--color-surface-raised);
+    background: var(--color-bg-alt);
     padding: var(--spacing-lg);
-    border-radius: 0;
+    border-radius: 6px;
     overflow-x: auto;
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-lg) 0;
+    border: 1px solid var(--color-border);
 }
 
 .post-content pre code {
     background: none;
     padding: 0;
+    border-radius: 0;
 }
 
 .post-content blockquote {
-    border-left: 4px solid var(--color-primary);
+    border-left: 3px solid var(--color-accent);
     padding-left: var(--spacing-lg);
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-lg) 0;
     font-style: italic;
-    color: var(--color-text-secondary);
+    color: var(--color-text-light);
 }
 
 .post-footer {
@@ -266,13 +265,25 @@ layout: base.njk
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .post-header {
+        padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    }
+    
     .post-title {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-h2);
     }
     
     .post-excerpt {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-body);
+    }
+    
+    .post-content {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .post-content h2 {
+        margin-top: var(--spacing-2xl);
     }
 }
 </style>

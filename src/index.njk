@@ -12,7 +12,7 @@ description: Experience Humanist Modernism through digital design - prioritizing
             <!-- HM focuses on content and readability over decorative geometry -->
             
             <h1 class="hero-title">
-                Humanist Modernism: Clarity Serving Humanity
+                Humanist Modernism: Warmth, Readability, and Clean Design
             </h1>
             
             <p class="hero-subtitle">
@@ -20,7 +20,7 @@ description: Experience Humanist Modernism through digital design - prioritizing
             </p>
             
             <div class="hero-cta">
-                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary">
+                <a href="{{ '/examples/' | baseUrl }}" class="btn btn--primary">
                     See Key Typeface Examples
                     <span aria-hidden="true">→</span>
                 </a>
@@ -32,202 +32,45 @@ description: Experience Humanist Modernism through digital design - prioritizing
     </div>
 </section>
 
-<!-- Featured Projects Section -->
-<section class="featured-projects section">
+<!-- Key Principles Summary Section -->
+<section class="principles-summary section section--alt">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Foundational Principles</h2>
+        <div class="principles-intro">
+            <h2 class="section-title">Key Principles of Humanist Modernism</h2>
             <p class="section-subtitle">
-                The design concepts that prioritize legibility, empathy, and the user experience
+                A design philosophy that prioritizes human comfort, clarity, and empathetic communication over geometric abstraction.
             </p>
         </div>
         
-        <div class="grid grid--3-col">
-            {% set featuredProjects = collections.projects | filter('featured') | limit(3) %}
-            {% if featuredProjects.length > 0 %}
-                {% for project in featuredProjects %}
-                <article class="card project-card card-geometric">
-                    {% if project.data.image %}
-                    <div class="card-image">
-                        <img src="{{ project.data.image | baseUrl }}" 
-                             alt="{{ project.data.title }}"
-                             loading="lazy">
-                    </div>
-                    {% endif %}
-                    
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            <a href="{{ project.url | baseUrl }}">
-                                {{ project.data.title }}
-                            </a>
-                        </h3>
-                        
-                        <p class="card-description">
-                            {{ project.data.description or (project.templateContent | excerpt) }}
-                        </p>
-                        
-                        {% if project.data.tags %}
-                        <div class="card-tags">
-                            {% for tag in project.data.tags %}
-                            {% if tag != "projects" %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        
-                        {% if project.data.status %}
-                        <span class="project-status status-{{ project.data.status }}">
-                            {{ project.data.status }}
-                        </span>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="card-footer">
-                        <a href="{{ project.url | baseUrl }}" class="card-link">
-                            Explore Design Element <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
-                </article>
-                {% endfor %}
-            {% else %}
-                <!-- Placeholder content aligned with Humanist Modernism -->
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Readability Paramount</h3>
-                        <p class="card-description">Legibility is the cornerstone. Generous body text and ample line-height serve the reader first.</p>
-                        <div class="card-tags">
-                            <span class="tag">Typography</span>
-                            <span class="tag">Readability</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Empathetic Typography</h3>
-                        <p class="card-description">Emphasis on humanist sans-serifs (Frutiger, Meta) with open apertures and varied stroke width for warmth.</p>
-                        <div class="card-tags">
-                            <span class="tag">Typefaces</span>
-                            <span class="tag">Humanist</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="card project-card card-geometric">
-                    <div class="card-content">
-                        <h3 class="card-title">Content-First Layout</h3>
-                        <p class="card-description">Prioritizing the reading experience with ample white space, narrow measures (720px max-width), and clear hierarchy.</p>
-                        <div class="card-tags">
-                            <span class="tag">Layout</span>
-                            <span class="tag">Accessibility</span>
-                        </div>
-                    </div>
-                </article>
-            {% endif %}
+        <div class="principles-grid">
+            <!-- Principle 1: Readability is Paramount -->
+            <div class="principle-card">
+                <h3 class="principle-heading">Readability is Paramount</h3>
+                <p class="principle-text">
+                    Generous font sizes (18–21px) and relaxed line heights (1.7–1.8) prioritize the reader's visual comfort. Every typographic choice is made to enable comfortable, sustained reading without fatigue or strain.
+                </p>
+            </div>
+            
+            <!-- Principle 2: Empathetic Typography -->
+            <div class="principle-card">
+                <h3 class="principle-heading">Empathetic Typography</h3>
+                <p class="principle-text">
+                    Humanist typefaces (Frutiger, Avenir, FF Meta) are chosen for their warmth, open forms, and superior legibility over cold geometric sans-serifs. They communicate that the reader's comfort matters.
+                </p>
+            </div>
+            
+            <!-- Principle 3: Content-First Layout -->
+            <div class="principle-card">
+                <h3 class="principle-heading">Content-First Layout</h3>
+                <p class="principle-text">
+                    Layout decisions—constrained line length (60–80 characters), ample white space, and generous margins—eliminate cognitive distraction and create a calm reading environment.
+                </p>
+            </div>
         </div>
         
-        <div class="section-footer">
-            <a href="{{ '/projects/' | baseUrl }}" class="btn btn--secondary">
-                View All Principles
-                <span aria-hidden="true">→</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Recent Blog Posts Section -->
-<section class="recent-posts section section--alt">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Key Practitioners & Context</h2>
-            <p class="section-subtitle">
-                Understanding the figures who championed design that serves human needs
-            </p>
-        </div>
-        
-        <div class="grid grid--3-col">
-            {% set recentPosts = collections.blog | reverse | limit(3) %}
-            {% if recentPosts.length > 0 %}
-                {% for post in recentPosts %}
-                <article class="card post-card">
-                    <div class="card-content">
-                        {% if post.data.date %}
-                        <time class="card-date post-date" datetime="{{ post.data.date | dateFormat('YYYY-MM-DD') }}">
-                            {{ post.data.date | dateFormat('MMMM D, YYYY') }}
-                        </time>
-                        {% endif %}
-                        
-                        <h3 class="card-title">
-                            <a href="{{ post.url | baseUrl }}">
-                                {{ post.data.title }}
-                            </a>
-                        </h3>
-                        
-                        <p class="card-description">
-                            {{ post.data.description or (post.templateContent | excerpt) }}
-                        </p>
-                        
-                        {% if post.data.tags %}
-                        <div class="card-tags">
-                            {% for tag in post.data.tags %}
-                            {% if tag != "blog" %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="card-footer">
-                        <a href="{{ post.url | baseUrl }}" class="card-link">
-                            Read More <span aria-hidden="true">→</span>
-                        </a>
-                        {% if post.templateContent %}
-                        <span class="reading-time">{{ post.templateContent | readingTime }} min read</span>
-                        {% endif %}
-                    </div>
-                </article>
-                {% endfor %}
-            {% else %}
-                <!-- Placeholder content featuring Humanist Modernism key figures -->
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">1954-1967</time>
-                        <h3 class="card-title">Adrian Frutiger & Univers</h3>
-                        <p class="card-description">The humanist reaction to geometric sans-serifs, creating readable and functional type systems that prioritize human perception and warmth.</p>
-                        <div class="card-tags">
-                            <span class="tag">Frutiger</span>
-                            <span class="tag">Typography</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">1983-Present</time>
-                        <h3 class="card-title">Edward Tufte & Information Design</h3>
-                        <p class="card-description">Principles of visual display: maximizing the data-ink ratio while insisting on clear, efficient communication that respects the viewer's intelligence.</p>
-                        <div class="card-tags">
-                            <span class="tag">Tufte</span>
-                            <span class="tag">Data Viz</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="card post-card">
-                    <div class="card-content">
-                        <time class="card-date post-date">2000-Present</time>
-                        <h3 class="card-title">The UX Movement</h3>
-                        <p class="card-description">Influencing user experience, mobile-first design, and accessibility (WCAG), making digital design truly universal and human-centered.</p>
-                        <div class="card-tags">
-                            <span class="tag">Accessibility</span>
-                            <span class="tag">Mobile-First</span>
-                        </div>
-                    </div>
-                </article>
-            {% endif %}
-        </div>
-        
-        <div class="section-footer">
-            <a href="{{ '/blog/' | baseUrl }}" class="btn btn--secondary">
-                View All Articles
+        <div class="principles-cta">
+            <a href="{{ '/principles/' | baseUrl }}" class="btn btn--outline">
+                Explore All Principles
                 <span aria-hidden="true">→</span>
             </a>
         </div>
@@ -244,11 +87,207 @@ description: Experience Humanist Modernism through digital design - prioritizing
             </p>
             
             <div class="cta-actions">
-                <a href="{{ '/contact/' | baseUrl }}" class="btn btn--accent btn--lg">
-                    Apply the Principles
+                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary btn--lg">
+                    Explore Design Principles
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="{{ '/history/' | baseUrl }}" class="btn btn--outline btn--lg">
+                    Learn the History
                     <span aria-hidden="true">→</span>
                 </a>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+/* Hero Section Styles */
+.hero {
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: var(--font-size-display-lg);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-heading-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-body-xl);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Key Principles Summary Section */
+.principles-summary {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.principles-intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl) auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-body-lg);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.principle-card {
+    padding: var(--spacing-2xl);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.principle-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.principle-heading {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-heading);
+}
+
+.principle-text {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text-light);
+}
+
+.principles-cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+    background: var(--color-bg-alt);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.cta-text {
+    font-size: var(--font-size-body-lg);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.cta-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-h1);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-body-lg);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+    }
+    
+    .principles-summary {
+        padding: 3rem 0;
+    }
+    
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .principle-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-h3);
+    }
+    
+    .cta-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-title {
+        font-size: var(--font-size-h3);
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .cta-actions .btn {
+        width: 100%;
+    }
+}
+</style>

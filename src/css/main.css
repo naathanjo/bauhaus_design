@@ -1,5 +1,5 @@
 /* ========================================
-   BAUHAUS REVIVAL PORTFOLIO
+   HUMANIST MODERNISM PORTFOLIO
    Main CSS Entry Point
    ======================================== */
 
@@ -22,10 +22,8 @@
 @import url('./components/buttons.css');
 @import url('./components/cards.css');
 @import url('./components/navigation.css');
-@import url('./components/geometric.css');
 @import url('./components/footer.css');
 @import url('./components/forms.css');
-@import url('./components/color-theory.css');
 
 /* Animations */
 @import url('./animations.css');
@@ -42,15 +40,11 @@
 
 /* Hero styles moved to components/hero.css */
 
-/* Geometric decoration styles moved to components/hero.css */
-
 /* Page header styles moved to components/sections.css */
 
 /* Section header styles moved to components/sections.css */
 
 /* Project and blog section styles moved to components/sections.css */
-
-
 
 /* ========================================
    RESPONSIVE DESIGN
@@ -61,3 +55,40 @@
    - Card responsive: components/cards.css
    - Form responsive: components/forms.css
    ======================================== */
+
+/* ========================================
+   HM DEMONSTRATION STYLES (Examples Page)
+   Clean, subtle framing for visual clarity
+   ======================================== */
+
+.example-figure {
+  /* Ensures figure is centered and separated from text */
+  margin: var(--spacing-2xl) auto;
+  padding: var(--spacing-sm);
+  /* Subtle border for soft framing, not geometric emphasis */
+  border: 1px solid var(--color-border);
+  /* Soft corner for approachability */
+  border-radius: var(--radius-sm);
+  /* Subtle shadow for gentle elevation */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  /* Ensures it doesn't exceed the main reading measure */
+  max-width: 100%;
+}
+
+.example-screenshot {
+  /* Images are contained within the figure */
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+.image-caption {
+  /* Caption must be readable, yet clearly secondary */
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
+  padding: var(--spacing-md) var(--spacing-sm) 0;
+  text-align: center;
+}

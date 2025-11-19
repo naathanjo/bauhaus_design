@@ -1,6 +1,7 @@
 /* ========================================
    NAVIGATION COMPONENTS
    Header, navbar, mobile menu
+   Humanist Modernism: Warm, readable, accessible
    ======================================== */
 
 /* Site header */
@@ -9,7 +10,7 @@
   top: 0;
   z-index: var(--z-fixed);
   background-color: var(--color-bg);
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   transition: transform var(--transition-base);
 }
 
@@ -19,7 +20,7 @@
 
 /* Navbar */
 .navbar {
-  padding: var(--spacing-md) 0;  /* Reduced for mobile efficiency */
+  padding: var(--spacing-md) 0;
 }
 
 .nav-container {
@@ -33,15 +34,14 @@
 
 /* Brand */
 .nav-brand {
-  /* Fortune 100 Typography: Brand using H3 display sizing */
   font-family: var(--font-display);
   font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-heading);
   color: var(--color-text);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-display);
-  transition: color var(--transition-fast);
+  text-transform: none;
+  letter-spacing: 0;
+  transition: color var(--transition-base);
 }
 
 .nav-brand:hover {
@@ -62,62 +62,44 @@
 
 .nav-link {
   display: block;
-  /* Fortune 100 Typography: Navigation body styling */
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-body);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-body);
   color: var(--color-text);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-heading);
+  text-transform: none;
+  letter-spacing: 0;
   padding: var(--spacing-sm) var(--spacing-md);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-base);
   position: relative;
+  border-bottom: 2px solid transparent;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background-color: var(--color-primary);
-  transition: all var(--transition-bauhaus);
-  transform: translateX(-50%);
-}
-
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--color-primary);
 }
 
-.nav-link:hover::after {
-  width: 100%;
-  background-color: var(--color-primary);
-}
-
-.nav-link.active::after {
-  width: 100%;
-  background-color: var(--color-accent);  /* Bauhaus yellow for active state */
+.nav-link.active {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 /* Nav actions (theme toggle, etc.) */
 .nav-actions {
-  display: none;  /* Hidden on desktop, shown in mobile menu */
+  display: none;
   align-items: center;
   gap: var(--spacing-lg);
   padding: var(--spacing-md);
   background-color: var(--color-bg-alt);
-  border-left: 3px solid var(--color-bauhaus-yellow);
+  border-left: 1px solid var(--color-border);
 }
 
 .nav-actions-label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-light);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 /* Hamburger menu button */
@@ -136,9 +118,9 @@
 .hamburger .bar {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: var(--color-text);
-  transition: all var(--transition-bauhaus);
+  transition: all var(--transition-base);
   transform-origin: center;
 }
 
@@ -154,113 +136,47 @@
   transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* ========================================
-   BAUHAUS THEME TOGGLE
-   High-fidelity geometric slider with Kandinsky color theory
-   ======================================== */
-
+/* Theme toggle button - Simple, minimal */
 .theme-toggle,
 .desktop-theme-toggle {
   position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 28px;
-  border: 2px solid var(--color-bauhaus-black);
-  background: linear-gradient(
-    to right,
-    var(--color-bauhaus-yellow) 0%,
-    var(--color-bauhaus-yellow) 50%,
-    var(--color-bauhaus-blue) 50%,
-    var(--color-bauhaus-blue) 100%
-  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
   cursor: pointer;
-  transition: all var(--transition-bauhaus);
-  box-shadow: 3px 3px 0 var(--color-bauhaus-black);
+  transition: all var(--transition-base);
+  border-radius: var(--radius-md);
   padding: 0;
-  overflow: visible;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .theme-toggle:hover,
 .desktop-theme-toggle:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 var(--color-bauhaus-black);
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border-dark);
 }
 
-.theme-toggle:active,
-.desktop-theme-toggle:active {
-  transform: translate(1px, 1px);
-  box-shadow: 2px 2px 0 var(--color-bauhaus-black);
+.theme-toggle:focus-visible,
+.desktop-theme-toggle:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-/* Slider knob - refined geometric square */
+/* Theme icon - Simple symbol */
 .theme-icon {
-  position: absolute;
-  top: 2px;
-  left: 2px;
   width: 20px;
   height: 20px;
-  background-color: var(--color-bauhaus-white);
-  border: 2px solid var(--color-bauhaus-black);
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  line-height: 1;
-  font-style: normal;
-  font-weight: bold;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
-  z-index: 2;
+  color: var(--color-text);
+  font-size: 16px;
 }
-
-/* Light mode indicator - circle for sun */
-.theme-icon::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 2px solid var(--color-bauhaus-black);
-  background-color: transparent;
-  display: block;
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-/* Dark mode - slider moves to right, indicator changes */
-[data-theme="dark"] .theme-icon {
-  left: calc(100% - 24px);
-  background-color: var(--color-bauhaus-black);
-  border-color: var(--color-bauhaus-white);
-}
-
-[data-theme="dark"] .theme-icon::before {
-  background-color: var(--color-bauhaus-white);
-  border-color: var(--color-bauhaus-white);
-  width: 10px;
-  height: 10px;
-}
-
-/* Focus state for accessibility */
-.theme-toggle:focus-visible,
-.desktop-theme-toggle:focus-visible {
-  outline: 2px solid var(--color-bauhaus-red);
-  outline-offset: 3px;
-}
-
-/* Enhance visual separation between color zones */
-.theme-toggle::after,
-.desktop-theme-toggle::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background-color: var(--color-bauhaus-black);
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-/* Desktop-only theme toggle */
 
 /* Footer navigation */
 .footer-nav {
@@ -271,7 +187,8 @@
 
 .footer-nav-link {
   color: var(--color-text-light);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-base);
+  text-decoration: none;
 }
 
 .footer-nav-link:hover {
@@ -284,22 +201,20 @@
 
 @media (max-width: 767px) {
   .navbar {
-    padding: var(--spacing-sm) 0;  /* Even tighter on mobile */
+    padding: var(--spacing-sm) 0;
   }
-
-  /* Nav brand sizing handled by Fortune 100 H3 clamp() system */
 
   .hamburger {
     display: flex;
   }
 
   .desktop-theme-toggle {
-    display: none;  /* Hide desktop theme toggle on mobile */
+    display: none;
   }
 
   .nav-menu {
     position: fixed;
-    top: 60px;  /* Adjusted for smaller navbar */
+    top: 60px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 60px);
@@ -307,9 +222,9 @@
     align-items: flex-start;
     gap: 0;
     background-color: var(--color-bg);
-    padding: var(--spacing-lg);  /* Reduced padding */
+    padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
-    transition: left var(--transition-bauhaus);
+    transition: left var(--transition-base);
     overflow-y: auto;
     z-index: var(--z-dropdown);
   }
@@ -326,32 +241,33 @@
   .nav-link {
     width: 100%;
     padding: var(--spacing-lg) 0;
-    /* Mobile nav link sizing handled by Fortune 100 body typography */
+    border-bottom: none;
   }
 
-  .nav-link::after {
-    display: none;
+  .nav-link.active {
+    border-bottom: none;
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--spacing-md);
   }
 
   .nav-actions {
-    display: flex;  /* Show in mobile menu */
+    display: flex;
     order: -1;
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
     width: 100%;
     justify-content: space-between;
     align-items: center;
   }
 
   .nav-actions-label {
-    /* Fortune 100 Typography: Body text for nav action labels */
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-normal);
     color: var(--color-text);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-heading);
+    text-transform: none;
+    letter-spacing: 0;
     font-family: var(--font-body);
   }
 }
@@ -359,7 +275,7 @@
 /* Desktop styles */
 @media (min-width: 768px) {
   .desktop-theme-toggle {
-    display: flex;  /* Show desktop theme toggle on larger screens */
+    display: flex;
   }
 }
 
@@ -369,10 +285,10 @@
   top: -40px;
   left: 0;
   background-color: var(--color-primary);
-  color: var(--color-bauhaus-white);
+  color: var(--color-text-inverse);
   padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
-  transition: top var(--transition-fast);
+  transition: top var(--transition-base);
   z-index: var(--z-max);
 }
 
@@ -382,12 +298,12 @@
 
 /* ========================================
    BREADCRUMBS
-   Museum-style wayfinding
+   Simple, readable wayfinding
    ======================================== */
 
 .breadcrumbs {
   padding: var(--spacing-md) 0;
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -402,7 +318,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   list-style: none;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-body-sm);
   color: var(--color-text-muted);
 }
 
@@ -414,10 +330,11 @@
 
 .breadcrumb-link {
   color: var(--color-text-muted);
-  transition: color var(--transition-fast);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-base);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
 }
 
 .breadcrumb-link:hover {
@@ -425,59 +342,26 @@
 }
 
 .breadcrumb-separator {
-  color: var(--color-border);
+  color: var(--color-text-muted);
   user-select: none;
 }
 
 .breadcrumb-current {
   color: var(--color-text);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* ========================================
-   READING PROGRESS INDICATOR
-   Shows article completion
-   ======================================== */
-
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--color-surface-raised);
-  z-index: calc(var(--z-fixed) + 1);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-
-.reading-progress.visible {
-  opacity: 1;
-}
-
-.reading-progress-bar {
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--color-bauhaus-red) 0%,
-    var(--color-bauhaus-blue) 50%,
-    var(--color-bauhaus-yellow) 100%
-  );
-  width: 0%;
-  transition: width 0.1s ease-out;
+  font-weight: var(--font-weight-normal);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 /* ========================================
    RELATED CONTENT
-   Museum-style suggestions
+   Simple suggestions
    ======================================== */
 
 .related-content {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--color-surface);
-  border-top: 2px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
 }
 
 .related-content-header {
@@ -486,17 +370,17 @@
 }
 
 .related-content-title {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-heading);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .related-content-subtitle {
   font-size: var(--font-size-body);
-  color: var(--color-text-secondary);
+  color: var(--color-text-light);
   font-style: italic;
 }
 
@@ -520,17 +404,18 @@
   gap: var(--spacing-lg);
   align-items: center;
   padding: var(--spacing-md);
-  background-color: var(--color-surface);
-  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-bg-alt);
+  border-left: 2px solid var(--color-primary);
   margin: var(--spacing-xl) 0;
+  border-radius: var(--radius-md);
 }
 
 .meta-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-light);
 }
 
 .meta-icon {
@@ -540,9 +425,9 @@
 }
 
 .meta-label {
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-normal);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .meta-value {
