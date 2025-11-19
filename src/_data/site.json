@@ -1,17 +1,17 @@
 {
-  "title": "Bauhaus Revival",
-  "description": "A modern portfolio showcasing Bauhaus Revival and Neo-Modernism design principles through contemporary web development",
+  "title": "Humanist Modernism",
+  "description": "Clarity Serving Humanity: A design gallery showcasing Humanist Modernism principles, emphasizing superior readability, accessible typography, and human-centered design.",
   "author": "Design Portfolio",
   "url": "https://www.mywebclass.org",
   "email": "hello@eaikw.com",
-  "tagline": "Where Bauhaus Meets Modern Web",
+  "tagline": "Design Is How It Works",
   "keywords": [
-    "bauhaus",
-    "neo-modernism",
+    "humanist modernism",
+    "typography",
+    "readability",
+    "accessibility",
     "web design",
-    "portfolio",
-    "minimalist design",
-    "geometric design"
+    "content-first"
   ],
   "social": {
     "github": "https://github.com/yourusername",
@@ -25,15 +25,15 @@
       "url": "/"
     },
     {
-      "text": "Work",
+      "text": "Principles",
       "url": "/projects/"
     },
     {
-      "text": "Learn",
+      "text": "Typography",
       "url": "/color-theory/"
     },
     {
-      "text": "Thoughts",
+      "text": "Context",
       "url": "/blog/"
     },
     {

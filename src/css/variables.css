@@ -1,79 +1,85 @@
 /* ========================================
-   BAUHAUS REVIVAL - CSS CUSTOM PROPERTIES
+   HUMANIST MODERNISM - CSS CUSTOM PROPERTIES
    Design Token System
+   Inspired by Adrian Frutiger & Edward Tufte
    ======================================== */
 
 :root {
   /* ========================================
-     BAUHAUS COLOR PALETTE
+     HUMANIST COLOR PALETTE
+     Warm neutrals & earth tones
      ======================================== */
   
-  /* Primary Bauhaus Colors */
-  --color-bauhaus-red: #e31e24;
-  --color-bauhaus-blue: #004f9f;
-  --color-bauhaus-yellow: #ffd100;
-  --color-bauhaus-black: #000000;
-  --color-bauhaus-white: #ffffff;
+  /* Primary Humanist Colors */
+  --color-humanist-text: #333333;
+  --color-humanist-bg: #fafafa;
+  --color-humanist-warmgray: #7a6f68;
+  --color-humanist-sage: #6b8e7f;
+  --color-humanist-clay: #a67c52;
+  --color-humanist-slate: #5a6b7a;
   
-  /* Neo-Modernist Neutrals */
-  --color-concrete: #f5f5f5;
-  --color-steel: #8e8e93;
-  --color-charcoal: #2c2c2c;
-  --color-aluminum: #e5e5e5;
-  --color-graphite: #4a4a4a;
+  /* Earth Tone Palette */
+  --color-earth-warm: #d9ccc3;
+  --color-earth-cool: #c9d7d6;
+  --color-earth-accent: #c5a896;
+  
+  /* Humanist Neutrals */
+  --color-cream: #f5f3f0;
+  --color-sand: #e8e4e0;
+  --color-taupe: #8b8680;
+  --color-charcoal: #3a3a3a;
   
   /* Semantic Color Assignments */
-  --color-primary: var(--color-bauhaus-blue);
-  --color-primary-light: #0066cc;
-  --color-primary-dark: #003d7a;
+  --color-primary: var(--color-humanist-sage);
+  --color-primary-light: #8fa99a;
+  --color-primary-dark: #556d63;
   
-  --color-secondary: var(--color-bauhaus-red);
-  --color-secondary-light: #ff3339;
-  --color-secondary-dark: #b31519;
+  --color-secondary: var(--color-humanist-clay);
+  --color-secondary-light: #b8926b;
+  --color-secondary-dark: #8a6341;
   
-  --color-accent: var(--color-bauhaus-yellow);
-  --color-accent-light: #ffdc33;
-  --color-accent-dark: #ccaa00;
+  --color-accent: var(--color-humanist-warmgray);
+  --color-accent-light: #9b9087;
+  --color-accent-dark: #5c5450;
   
   /* Text Colors */
-  --color-text: var(--color-charcoal);
-  --color-text-light: var(--color-steel);
-  --color-text-muted: #9ca3af;
-  --color-text-inverse: var(--color-bauhaus-white);
-  --color-text-secondary: #6b7280;
+  --color-text: var(--color-humanist-text);
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
+  --color-text-inverse: var(--color-humanist-bg);
+  --color-text-secondary: #757575;
   
-  /* Link Colors - MOMA FIX: WCAG AAA compliant (7:1 contrast) */
-  --color-link: #003d7a;  /* Darker blue for AAA compliance */
-  --color-link-hover: #004f9f;  /* Brighter on hover */
-  --color-link-visited: #5b21b6;  /* Distinct visited state */
+  /* Link Colors - WCAG AAA compliant (7:1 contrast) */
+  --color-link: #556d63;        /* Muted sage for readability */
+  --color-link-hover: #6b8e7f;  /* Slightly warmer on hover */
+  --color-link-visited: #7a6f68; /* Warm gray visited state */
   
   /* Background Colors */
-  --color-bg: var(--color-bauhaus-white);
-  --color-bg-alt: var(--color-concrete);
+  --color-bg: var(--color-humanist-bg);
+  --color-bg-alt: var(--color-cream);
   --color-bg-dark: var(--color-charcoal);
-  --color-bg-geometric: var(--color-aluminum);
+  --color-bg-accent: var(--color-earth-warm);
   
   /* Border Colors */
-  --color-border: var(--color-aluminum);
-  --color-border-light: var(--color-concrete);
-  --color-border-dark: var(--color-charcoal);
+  --color-border: var(--color-sand);
+  --color-border-light: var(--color-cream);
+  --color-border-dark: var(--color-taupe);
   
-  /* State Colors */
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-error: var(--color-bauhaus-red);
-  --color-info: var(--color-bauhaus-blue);
+  /* State Colors - Muted */
+  --color-success: #7a9b7d;
+  --color-warning: #c5a896;
+  --color-error: #a67c52;
+  --color-info: var(--color-humanist-sage);
 
   /* ========================================
      TYPOGRAPHY SYSTEM
+     Humanist sans-serif inspired by Frutiger
      ======================================== */
   
   /* Font Families */
-  --font-display: 'Inter', 'Futura', 'Avenir Next', 'Helvetica Neue', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Avenir Next', 'Avenir', 'Frutiger', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Avenir', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', 'Monaco', 'Courier New', monospace;
-  
-  /* Legacy font sizes removed - now using Fortune 100 typography system in typography.css */
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -83,57 +89,55 @@
   --font-weight-bold: 700;
   --font-weight-black: 900;
   
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-snug: 1.35;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
+  /* Line Heights - Generous for readability (Tufte principle) */
+  --line-height-tight: 1.4;
+  --line-height-snug: 1.55;
+  --line-height-normal: 1.7;      /* Body text */
+  --line-height-relaxed: 1.8;     /* Reading-optimized */
   --line-height-loose: 2;
   
-  /* Letter Spacing */
-  --letter-spacing-tight: -0.025em;
-  --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.05em;
-  --letter-spacing-wider: 0.1em;
+  /* Letter Spacing - Open & airy */
+  --letter-spacing-tight: 0;
+  --letter-spacing-normal: 0.01em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
 
   /* ========================================
      SPACING SYSTEM
+     Fibonacci-based (more natural than golden ratio)
      ======================================== */
-  
-  /* Golden Ratio: 1.618 */
-  --ratio-golden: 1.618;
   
   /* Base Spacing Unit */
   --spacing-base: 1rem;        /* 16px */
   
-  /* Spacing Scale */
+  /* Spacing Scale - Fibonacci sequence */
   --spacing-xs: 0.25rem;       /* 4px */
   --spacing-sm: 0.5rem;        /* 8px */
   --spacing-md: 1rem;          /* 16px */
   --spacing-lg: 1.5rem;        /* 24px */
-  --spacing-xl: 2rem;          /* 32px */
-  --spacing-2xl: 3rem;         /* 48px */
-  --spacing-3xl: 4rem;         /* 64px */
-  --spacing-4xl: 6rem;         /* 96px */
-  --spacing-5xl: 8rem;         /* 128px */
+  --spacing-xl: 2.5rem;        /* 40px */
+  --spacing-2xl: 4rem;         /* 64px */
+  --spacing-3xl: 6.5rem;       /* 104px */
+  --spacing-4xl: 10rem;        /* 160px */
+  --spacing-5xl: 16rem;        /* 256px */
   
-  /* Golden Ratio Spacing */
-  --spacing-golden-sm: calc(var(--spacing-base) / var(--ratio-golden)); /* ~10px */
-  --spacing-golden-lg: calc(var(--spacing-base) * var(--ratio-golden)); /* ~26px */
+  /* Paragraph Spacing - Critical for Tufte readability */
+  --paragraph-spacing: 1.5em;
 
   /* ========================================
      LAYOUT SYSTEM
+     Content-focused, not grid-focused
      ======================================== */
   
-  /* Container */
-  --container-max-width: 1400px;          /* Increased for better space utilization */
-  --container-max-width-narrow: 900px;    /* For hero/single column content */
-  --container-max-width-content: 1200px;  /* For reading content */
-  --container-padding: var(--spacing-md);
+  /* Container - Text block optimized (Tufte: 720px max) */
+  --container-max-width: 720px;           /* Ideal reading width */
+  --container-max-width-narrow: 640px;    /* For constrained content */
+  --container-max-width-content: 800px;   /* Slightly wider for tables/images */
+  --container-padding: var(--spacing-lg);
   
   /* Grid */
   --grid-columns: 12;
-  --grid-gap: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) for tighter card layouts */
+  --grid-gap: var(--spacing-md);
   
   /* Breakpoints */
   --breakpoint-sm: 640px;
@@ -144,71 +148,67 @@
 
   /* ========================================
      GEOMETRIC DESIGN ELEMENTS
+     Humanist: Subtle, not mechanical
      ======================================== */
   
-  /* Border Radius - BAUHAUS: Sharp geometric edges only */
+  /* Border Radius - Minimal, humanist softness */
   --radius-none: 0;
-  --radius-sm: 0;              /* Bauhaus: No rounding */
-  --radius-base: 0;            /* Bauhaus: No rounding */
-  --radius-md: 0;              /* Bauhaus: No rounding */
-  --radius-lg: 0;              /* Bauhaus: No rounding */
-  --radius-xl: 0;              /* Bauhaus: No rounding */
-  --radius-2xl: 0;             /* Bauhaus: No rounding */
-  --radius-full: 50%;          /* Only for perfect circles */
+  --radius-sm: 2px;            /* Subtle softness */
+  --radius-base: 3px;          /* Natural rounding */
+  --radius-md: 4px;            /* Gentle curves */
+  --radius-lg: 6px;            /* Approachable */
+  --radius-xl: 8px;            /* Warm feel */
+  --radius-2xl: 12px;          /* Generous */
+  --radius-full: 50%;          /* Circles when needed */
   
   /* Aspect Ratios */
   --ratio-square: 1;
   --ratio-video: 1.777;        /* 16:9 */
   --ratio-photo: 1.5;          /* 3:2 */
   
-  /* Geometric Sizes */
-  --geometric-sm: 40px;
-  --geometric-md: 80px;
-  --geometric-lg: 120px;
-  --geometric-xl: 200px;
+  /* Geometric Sizes - Proportional, not imposing */
+  --geometric-sm: 32px;
+  --geometric-md: 64px;
+  --geometric-lg: 96px;
+  --geometric-xl: 144px;
 
   /* ========================================
      SHADOWS & ELEVATION
+     Soft, atmospheric, humanist
      ======================================== */
   
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
-  
-  /* Bauhaus Hard Shadows */
-  --shadow-bauhaus-sm: 4px 4px 0 var(--color-bauhaus-black);
-  --shadow-bauhaus-md: 8px 8px 0 var(--color-bauhaus-black);
-  --shadow-bauhaus-lg: 12px 12px 0 var(--color-bauhaus-black);
+  --shadow-xs: 0 1px 2px 0 rgba(58, 58, 58, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(58, 58, 58, 0.08);
+  --shadow-base: 0 4px 8px -2px rgba(58, 58, 58, 0.1);
+  --shadow-md: 0 8px 16px -4px rgba(58, 58, 58, 0.12);
+  --shadow-lg: 0 12px 24px -6px rgba(58, 58, 58, 0.15);
+  --shadow-xl: 0 16px 32px -8px rgba(58, 58, 58, 0.18);
+  --shadow-2xl: 0 20px 40px -10px rgba(58, 58, 58, 0.2);
 
   /* ========================================
      TRANSITIONS & ANIMATIONS
-     MOMA FIX: Bauhaus mechanical easing for machine-age precision
+     Humanist: Smooth, natural motion
      ======================================== */
   
-  /* Timing Functions - Bauhaus Mechanical Easing */
+  /* Timing Functions - Smooth, organic */
   --ease-linear: linear;
-  --ease-bauhaus-mechanical: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Primary Bauhaus easing */
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);  /* Same as mechanical */
-  --ease-bauhaus: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Mechanical precision */
+  --ease-humanist: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in: cubic-bezier(0.25, 0.46, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.45, 0.94);
+  --ease-in-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
-  /* Duration */
+  /* Duration - Slightly slower for human scale */
   --duration-instant: 0ms;
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 350ms;
-  --duration-slower: 500ms;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
   
-  /* Transitions - All using Bauhaus mechanical easing */
-  --transition-fast: var(--duration-fast) var(--ease-bauhaus-mechanical);
-  --transition-base: var(--duration-base) var(--ease-bauhaus-mechanical);
-  --transition-slow: var(--duration-slow) var(--ease-bauhaus-mechanical);
-  --transition-bauhaus: var(--duration-base) var(--ease-bauhaus-mechanical);
+  /* Transitions - All using humanist easing */
+  --transition-fast: var(--duration-fast) var(--ease-humanist);
+  --transition-base: var(--duration-base) var(--ease-humanist);
+  --transition-slow: var(--duration-slow) var(--ease-humanist);
+  --transition-humanist: var(--duration-base) var(--ease-humanist);
 
   /* ========================================
      Z-INDEX SCALE
@@ -229,23 +229,24 @@
 
 /* ========================================
    DARK THEME OVERRIDES
+   Warm, not cold
    ======================================== */
 
 [data-theme="dark"] {
-  --color-text: var(--color-concrete);
-  --color-text-light: var(--color-aluminum);
-  --color-text-muted: var(--color-steel);
+  --color-text: var(--color-cream);
+  --color-text-light: var(--color-sand);
+  --color-text-muted: var(--color-taupe);
   
-  --color-bg: #1a1a1a;
-  --color-bg-alt: var(--color-charcoal);
-  --color-bg-dark: var(--color-bauhaus-black);
+  --color-bg: #1f1d1a;
+  --color-bg-alt: #2a2622;
+  --color-bg-dark: var(--color-charcoal);
   
-  --color-border: var(--color-graphite);
-  --color-border-light: var(--color-charcoal);
+  --color-border: var(--color-taupe);
+  --color-border-light: #4a4540;
   
-  /* Adjust primary colors for better contrast in dark mode */
-  --color-primary-light: #1a7fd8;
-  --color-accent-light: #ffe14d;
+  /* Adjust accent colors for dark mode contrast */
+  --color-primary-light: #8fa99a;
+  --color-accent-light: #c5a896;
 }
 
 /* ========================================
@@ -254,19 +255,22 @@
 
 @media (max-width: 767px) {
   :root {
-    /* Legacy mobile font overrides removed - handled by Fortune 100 clamp() system */
+    /* Maintain readability on mobile */
+    --container-max-width: 95vw;
+    --container-max-width-narrow: 100%;
+    --container-max-width-content: 100%;
     
-    /* Reduce spacing on mobile */
-    --spacing-3xl: 3rem;         /* 48px */
-    --spacing-4xl: 4rem;         /* 64px */
-    --spacing-5xl: 5rem;         /* 80px */
+    /* Generous mobile spacing */
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
     
-    /* Smaller container padding */
-    --container-padding: var(--spacing-sm);
+    /* Adequate padding for touch targets */
+    --container-padding: var(--spacing-md);
     
-    /* Smaller geometric elements */
-    --geometric-md: 60px;
-    --geometric-lg: 100px;
-    --geometric-xl: 150px;
+    /* Keep geometric elements proportional */
+    --geometric-md: 48px;
+    --geometric-lg: 72px;
+    --geometric-xl: 108px;
   }
 }

@@ -1,35 +1,31 @@
 ---
 layout: base.njk
 title: Home
-description: Experience the Bauhaus movement through digital design - a museum-grade exhibition of geometric modernism, functional aesthetics, and revolutionary design philosophy
+description: Experience Humanist Modernism through digital design - prioritizing human readability, warmth, and accessibility over cold geometric ideals. Exploring Adrian Frutiger and Edward Tufte's principles.
 ---
 
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <!-- Geometric decorative elements -->
-            <div class="geometric-decoration" aria-hidden="true">
-                <div class="shape shape--circle"></div>
-                <div class="shape shape--square"></div>
-                <div class="shape shape--triangle"></div>
-            </div>
+            <!-- Bauhaus geometric decorative elements removed for Humanist Modernism -->
+            <!-- HM focuses on content and readability over decorative geometry -->
             
             <h1 class="hero-title">
-                Bauhaus Revival
+                Humanist Modernism: Clarity Serving Humanity
             </h1>
             
             <p class="hero-subtitle">
-                Form follows function. Where geometric purity meets digital innovation.
+                Design is how it works. Prioritizing human readability, warmth, and accessibility over cold geometric ideals.
             </p>
             
             <div class="hero-cta">
                 <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary">
-                    Explore the Movement
+                    See Key Typeface Examples
                     <span aria-hidden="true">→</span>
                 </a>
                 <a href="{{ '/about/' | baseUrl }}" class="btn btn--outline">
-                    Design Philosophy
+                    Read the Core Principles
                 </a>
             </div>
         </div>
@@ -40,9 +36,9 @@ description: Experience the Bauhaus movement through digital design - a museum-g
 <section class="featured-projects section">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Core Principles</h2>
+            <h2 class="section-title">Foundational Principles</h2>
             <p class="section-subtitle">
-                The foundational concepts that defined modernist design
+                The design concepts that prioritize legibility, empathy, and the user experience
             </p>
         </div>
         
@@ -89,40 +85,40 @@ description: Experience the Bauhaus movement through digital design - a museum-g
                     
                     <div class="card-footer">
                         <a href="{{ project.url | baseUrl }}" class="card-link">
-                            Explore Principle <span aria-hidden="true">→</span>
+                            Explore Design Element <span aria-hidden="true">→</span>
                         </a>
                     </div>
                 </article>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder content -->
+                <!-- Placeholder content aligned with Humanist Modernism -->
                 <article class="card project-card card-geometric">
                     <div class="card-content">
-                        <h3 class="card-title">Form Follows Function</h3>
-                        <p class="card-description">Design must serve purpose above all else. Every element justified by its utility.</p>
+                        <h3 class="card-title">Readability Paramount</h3>
+                        <p class="card-description">Legibility is the cornerstone. Generous body text and ample line-height serve the reader first.</p>
                         <div class="card-tags">
-                            <span class="tag">1919-1933</span>
-                            <span class="tag">Weimar</span>
+                            <span class="tag">Typography</span>
+                            <span class="tag">Readability</span>
                         </div>
                     </div>
                 </article>
                 <article class="card project-card card-geometric">
                     <div class="card-content">
-                        <h3 class="card-title">Geometric Abstraction</h3>
-                        <p class="card-description">Primary shapes as universal language. Circle, square, triangle define spatial harmony.</p>
+                        <h3 class="card-title">Empathetic Typography</h3>
+                        <p class="card-description">Emphasis on humanist sans-serifs (Frutiger, Meta) with open apertures and varied stroke width for warmth.</p>
                         <div class="card-tags">
-                            <span class="tag">Modernism</span>
-                            <span class="tag">Gropius</span>
+                            <span class="tag">Typefaces</span>
+                            <span class="tag">Humanist</span>
                         </div>
                     </div>
                 </article>
                 <article class="card project-card card-geometric">
                     <div class="card-content">
-                        <h3 class="card-title">Unity of Arts</h3>
-                        <p class="card-description">Dissolving barriers between fine art, craft, and industrial design.</p>
+                        <h3 class="card-title">Content-First Layout</h3>
+                        <p class="card-description">Prioritizing the reading experience with ample white space, narrow measures (720px max-width), and clear hierarchy.</p>
                         <div class="card-tags">
-                            <span class="tag">Dessau</span>
-                            <span class="tag">Revolution</span>
+                            <span class="tag">Layout</span>
+                            <span class="tag">Accessibility</span>
                         </div>
                     </div>
                 </article>
@@ -142,9 +138,9 @@ description: Experience the Bauhaus movement through digital design - a museum-g
 <section class="recent-posts section section--alt">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Historical Context</h2>
+            <h2 class="section-title">Key Practitioners & Context</h2>
             <p class="section-subtitle">
-                Understanding the movement that transformed modern design
+                Understanding the figures who championed design that serves human needs
             </p>
         </div>
         
@@ -192,37 +188,37 @@ description: Experience the Bauhaus movement through digital design - a museum-g
                 </article>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder exhibition content -->
+                <!-- Placeholder content featuring Humanist Modernism key figures -->
                 <article class="card post-card">
                     <div class="card-content">
-                        <time class="card-date post-date">1919-1933</time>
-                        <h3 class="card-title">The Weimar Years</h3>
-                        <p class="card-description">Founded by Walter Gropius in Weimar, Germany, the Bauhaus revolutionized art education by uniting fine arts and craft.</p>
+                        <time class="card-date post-date">1954-1967</time>
+                        <h3 class="card-title">Adrian Frutiger & Univers</h3>
+                        <p class="card-description">The humanist reaction to geometric sans-serifs, creating readable and functional type systems that prioritize human perception and warmth.</p>
                         <div class="card-tags">
-                            <span class="tag">Origins</span>
-                            <span class="tag">Gropius</span>
+                            <span class="tag">Frutiger</span>
+                            <span class="tag">Typography</span>
                         </div>
                     </div>
                 </article>
                 <article class="card post-card">
                     <div class="card-content">
-                        <time class="card-date post-date">1925-1932</time>
-                        <h3 class="card-title">Dessau & Industrial Design</h3>
-                        <p class="card-description">The move to Dessau marked the school's most productive period, producing iconic furniture and typography.</p>
+                        <time class="card-date post-date">1983-Present</time>
+                        <h3 class="card-title">Edward Tufte & Information Design</h3>
+                        <p class="card-description">Principles of visual display: maximizing the data-ink ratio while insisting on clear, efficient communication that respects the viewer's intelligence.</p>
                         <div class="card-tags">
-                            <span class="tag">Moholy-Nagy</span>
-                            <span class="tag">Albers</span>
+                            <span class="tag">Tufte</span>
+                            <span class="tag">Data Viz</span>
                         </div>
                     </div>
                 </article>
                 <article class="card post-card">
                     <div class="card-content">
-                        <time class="card-date post-date">1933-Present</time>
-                        <h3 class="card-title">Legacy & Influence</h3>
-                        <p class="card-description">Though closed by the Nazi regime, Bauhaus principles spread globally, shaping modernism for generations.</p>
+                        <time class="card-date post-date">2000-Present</time>
+                        <h3 class="card-title">The UX Movement</h3>
+                        <p class="card-description">Influencing user experience, mobile-first design, and accessibility (WCAG), making digital design truly universal and human-centered.</p>
                         <div class="card-tags">
-                            <span class="tag">International Style</span>
-                            <span class="tag">Modernism</span>
+                            <span class="tag">Accessibility</span>
+                            <span class="tag">Mobile-First</span>
                         </div>
                     </div>
                 </article>
@@ -242,14 +238,14 @@ description: Experience the Bauhaus movement through digital design - a museum-g
 <section class="cta-section section">
     <div class="container">
         <div class="cta-content">
-            <h2 class="cta-title">Experience Bauhaus Today</h2>
+            <h2 class="cta-title">Design that Works for Humans</h2>
             <p class="cta-text">
-                Discover how these revolutionary principles continue to shape contemporary design and digital experiences.
+                Explore how Humanist Modernism applies clarity and warmth to solve complex problems in information architecture and digital product design.
             </p>
             
             <div class="cta-actions">
                 <a href="{{ '/contact/' | baseUrl }}" class="btn btn--accent btn--lg">
-                    Explore the Exhibition
+                    Apply the Principles
                     <span aria-hidden="true">→</span>
                 </a>
             </div>

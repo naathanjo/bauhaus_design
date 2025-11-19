@@ -1,6 +1,6 @@
 /* ========================================
    BUTTON COMPONENTS
-   Bauhaus-inspired interactive elements
+   Humanist Modernism: Warm, accessible, subtle
    ======================================== */
 
 /* Base button */
@@ -9,21 +9,24 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-xl);
-  /* Fortune 100 Typography: Button text styling */
-  font-family: var(--font-display);
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-button);
-  line-height: var(--line-height-button);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-button);
-  border: 3px solid transparent;
-  border-radius: var(--radius-none);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-bauhaus);
+  transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+}
+
+.btn:hover {
+  transform: none;
 }
 
 .btn:disabled {
@@ -31,191 +34,168 @@
   cursor: not-allowed;
 }
 
-/* Button sizes with Fortune 100 typography */
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Button sizes */
 .btn-sm {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  font-size: var(--font-size-button-sm);
-  letter-spacing: var(--letter-spacing-button);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-body-sm);
 }
 
 .btn-lg {
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  font-size: var(--font-size-button-lg);
-  letter-spacing: var(--letter-spacing-button);
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  font-size: var(--font-size-body-lg);
 }
 
-/* Primary button - MUSEUM BAUHAUS BOLDNESS */
-.btn-primary {
+/* Primary button - Humanist warmth */
+.btn--primary {
   background-color: var(--color-primary);
-  color: var(--color-bauhaus-white);
+  color: var(--color-text-inverse);
   border-color: var(--color-primary);
-  box-shadow: 6px 6px 0 var(--color-bauhaus-black);  /* Bauhaus hard shadow */
-  transition: all var(--transition-bauhaus);
+  transition: all var(--transition-base);
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--color-primary-dark);
-  transition: left var(--transition-bauhaus);
-  z-index: -1;
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-sm);
 }
 
-.btn-primary:hover {
-  transform: translate(3px, 3px);  /* Move toward shadow */
-  box-shadow: 3px 3px 0 var(--color-bauhaus-black);
-  background-color: var(--color-accent);  /* Bauhaus yellow on hover */
-  color: var(--color-bauhaus-black);
-  border-color: var(--color-accent);
+.btn--primary:active {
+  background-color: var(--color-primary-dark);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:active {
-  transform: translate(6px, 6px);
-  box-shadow: none;
-}
-
-/* Secondary button - MUSEUM BAUHAUS STYLE */
-.btn-secondary {
-  background-color: var(--color-bauhaus-white);
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  border-width: 3px;
-  box-shadow: 5px 5px 0 var(--color-primary);
-  transition: all var(--transition-bauhaus);
-}
-
-.btn-secondary:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0 var(--color-primary);
-  background-color: var(--color-primary);
-  color: var(--color-bauhaus-white);
-}
-
-.btn-secondary:active {
-  transform: translate(5px, 5px);
-  box-shadow: none;
-}
-
-.btn-secondary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--color-secondary-dark);
-  transition: left var(--transition-bauhaus);
-  z-index: -1;
-}
-
-.btn-secondary:hover::before {
-  left: 0;
-}
-
-/* Accent button */
-.btn-accent {
-  background-color: var(--color-accent);
-  color: var(--color-bauhaus-black);
-  border-color: var(--color-accent);
-  font-weight: var(--font-weight-bold);
-}
-
-.btn-accent:hover {
-  background-color: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
-}
-
-/* Outline buttons */
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-bauhaus-black);
-  border-color: var(--color-bauhaus-black);
-}
-
-.btn-outline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--color-bauhaus-black);
-  transition: left var(--transition-bauhaus);
-  z-index: -1;
-}
-
-.btn-outline:hover::before {
-  left: 0;
-}
-
-.btn-outline:hover {
-  color: var(--color-bauhaus-white);
-}
-
-/* Outline primary */
-.btn-outline-primary {
+/* Secondary button - Outline style */
+.btn--secondary {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
+  transition: all var(--transition-base);
 }
 
-.btn-outline-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--color-primary);
-  transition: left var(--transition-bauhaus);
-  z-index: -1;
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
 }
 
-.btn-outline-primary:hover::before {
-  left: 0;
+.btn--secondary:active {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
-.btn-outline-primary:hover {
-  color: var(--color-bauhaus-white);
+/* Accent button - Muted earth tone */
+.btn--accent {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-secondary);
+  transition: all var(--transition-base);
 }
 
-/* Ghost button */
-.btn-ghost {
+.btn--accent:hover {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--accent:active {
+  background-color: var(--color-secondary-dark);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Outline button - Subtle border */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-text-light);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn--outline:active {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-text);
+}
+
+/* Outline primary - Muted sage */
+.btn--outline-primary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: all var(--transition-base);
+}
+
+.btn--outline-primary:hover {
+  background-color: rgba(107, 142, 127, 0.08);
+  border-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn--outline-primary:active {
+  background-color: rgba(107, 142, 127, 0.12);
+  border-color: var(--color-primary-dark);
+}
+
+/* Ghost button - Minimal, no border */
+.btn--ghost {
   background-color: transparent;
   color: var(--color-text);
   border-color: transparent;
+  transition: all var(--transition-base);
 }
 
-.btn-ghost:hover {
+.btn--ghost:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.btn--ghost:active {
   background-color: var(--color-bg-alt);
 }
 
-/* Icon buttons */
-.btn-icon {
+/* Icon buttons - Smaller, square-ish */
+.btn--icon {
   padding: var(--spacing-md);
-  border-radius: 0;
+  border-radius: var(--radius-md);
+  min-width: 48px;
+  min-height: 48px;
 }
 
-/* Button group */
+/* Button group - Flexbox arrangement */
 .btn-group {
   display: inline-flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
-/* Responsive buttons */
+.btn-group .btn {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Responsive buttons - Stack on mobile */
 @media (max-width: 767px) {
   .btn {
-    width: 100%;
-    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-body);
+  }
+
+  .btn-lg {
+    padding: var(--spacing-lg) var(--spacing-xl);
   }
 
   .btn-group {
     flex-direction: column;
     width: 100%;
+    gap: var(--spacing-md);
   }
 
   .btn-group .btn {
